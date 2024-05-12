@@ -1,0 +1,112 @@
+:root {
+    --color-primary: #FFE8D6;
+    --color-secondary: #CB997E;
+    --color-tertiary: #6B705C;
+}
+
+/* || Typography */
+.dotgothic16-regular {
+    font-family: "DotGothic16", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.quattrocento-sans-regular {
+    font-family: "Quattrocento Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.quattrocento-sans-bold {
+    font-family: "Quattrocento Sans", sans-serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.quattrocento-sans-regular-italic {
+    font-family: "Quattrocento Sans", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.quattrocento-sans-bold-italic {
+    font-family: "Quattrocento Sans", sans-serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+/* || General Styles */
+
+* {
+    margin: 0;
+    font-family: "Quattrocento Sans", sans-serif;
+}
+
+body {
+    background-color: var(--color-secondary);
+}
+
+/* || Navbar */
+
+ul {
+    list-style: none;
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-tertiary);
+
+    height: 100%;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    width: 12.5%;
+
+    text-align: center;
+    font-size: 14px;
+    color: var(--color-tertiary);
+}
+
+li {
+
+    a {
+        text-decoration: none;
+        padding: 20%;
+        display: block;
+        color: var(--color-tertiary);
+    }
+
+    a.active-page {
+        padding: 20%;
+        display: block;
+        background-color: var(--color-tertiary);
+        color: var(--color-primary);
+    }
+}
+
+
+.logo {
+    border: none;
+    position: relative;
+    height: 35%;
+    margin-bottom: 16%;
+}
+
+.logo-text {
+    writing-mode: vertical-lr;
+    font-size: 35px;
+
+    position: absolute;
+    top: 10%;
+    left: 10%;
+}
+
+.logo-figure {
+    background-color: var(--color-secondary);
+
+    height: 100px;
+    aspect-ratio: 1/1;
+    border-radius: 100%;
+
+    position: absolute;
+    top: 30%;
+    left: 20%;
+
+}
