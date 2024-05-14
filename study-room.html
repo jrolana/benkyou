@@ -13,11 +13,12 @@
         rel="stylesheet">
 
     <link rel="stylesheet" href="styles/style.css">
+
 </head>
 
 <body>
     <nav>
-        <ul>
+        <ul id="navbar">
             <li class="logo">
                 <div class="logo-figure"></div>
                 <p class="logo-text">べんきょう</p>
@@ -27,6 +28,27 @@
             <li><a href="materials.html">Materials</a></li>
         </ul>
     </nav>
+
+    <div class="pomodoro">
+        <p>Pomodoro Timer</p>
+        <p id="pomodoro-text">25:00</p>
+        <button id="pomodoro-start-btn">Focus</button>
+        <button id="pomodoro-stop-btn">Give Up</button>
+    </div>
+
+    <div class="goals">
+        <p>Session Goals</p>
+        <form id="goal-form">
+            <input type="text" name="goal-input" placeholder="What's your goal?" required />
+            <input type="submit" name="goal-submit" value="+" />
+        </form>
+
+        <ul id="goal-list">
+
+        </ul>
+    </div>
+
+    <script src="scripts/studyRoom.js"></script>
 </body>
 
 </html>
