@@ -1,0 +1,28 @@
+:root {
+    --color-primary: #FFE8D6;
+    --color-secondary: #CB997E;
+    --color-tertiary: #6B705C;
+}
+
+/* || pomodoro */
+
+.pomodoro,
+.goals {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-tertiary);
+    padding: 1%;
+
+    width: 25%;
+
+    color: var(--color-tertiary);
+    text-align: center;
+
+
+}
+
+.pomodoro button {
+    background-color: var(--color-primary);
+    border: 1px solid var(--color-tertiary);
+    padding: 1%;
+    color: var(--color-tertiary);
+}
