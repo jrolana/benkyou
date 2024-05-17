@@ -1,1 +1,20 @@
 @import url("global.css");
+
+.materialscontainer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 2% 8% 2% 15%;
+    background-color: var(--color-secondary);
+    border: 2px solid var(--color-tertiary);
+    height: 90%;
+    box-sizing: border-box;
+}
+
+.subjectslist {
+    width: 25%;
+    background-color: var(--color-primary);
+    text-align: left;
+    overflow-y: auto;
+    margin: 0px;
+}
