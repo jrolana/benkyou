@@ -5,10 +5,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Study Room</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="styles/study-room.css">
 </head>
 
 <body>
+    <nav>
+        <ul id="navbar">
+            <li class="logo">
+                <div class="logo-figure"></div>
+                <p class="logo-text">べんきょう</p>
+            </li>
+            <li><a href="homepage.html">Home</a></li>
+            <li><a class="active-page" href="study-room.html">Study Room</a></li>
+            <li><a href="materials.html">Materials</a></li>
+        </ul>
+    </nav>
 
+    <div class="pomodoro">
+        <p>Pomodoro Timer</p>
+        <p id="pomodoro-text">25:00</p>
+        <button id="pomodoro-start-btn">Focus</button>
+        <button id="pomodoro-stop-btn">Give Up</button>
+    </div>
+
+    <div class="goals">
+        <p>Session Goals</p>
+        <form id="goal-form">
+            <input type="text" name="goal-input" placeholder="What's your goal?" required />
+            <input type="submit" name="goal-submit" value="+" />
+        </form>
+
+        <ul id="goal-list">
+
+        </ul>
+    </div>
+
+    <script src="scripts/studyRoom.js"></script>
 </body>
 
 </html>
