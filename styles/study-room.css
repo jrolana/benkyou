@@ -1,0 +1,64 @@
+@import url("global.css");
+
+/* || Pomodoro */
+
+.pomodoro,
+.goals {
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-tertiary);
+    padding: 1%;
+    width: 15%;
+
+    position: absolute;
+    left: 15%;
+
+    color: var(--color-tertiary);
+}
+
+.pomodoro button {
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-tertiary);
+    padding: 3%;
+    margin: 1%;
+
+    color: var(--color-tertiary);
+    font-size: 14px;
+}
+
+#pomodoro-text {
+    font-size: 56px;
+}
+
+/* || Session Goals */
+
+.goals {
+    top: 50%;
+
+    input[type="text"] {
+        background-color: var(--color-primary);
+        border: 2px solid var(--color-tertiary);
+        padding: 1%;
+        font-style: italic;
+    }
+
+    input[type="submit"] {
+        background-color: var(--color-tertiary);
+        border: none;
+        color: var(--color-primary);
+        font-size: 20px;
+    }
+}
+
+#goals-list {
+    list-style: none;
+
+    background-color: var(--color-tertiary);
+
+    color: var(--color-primary);
+
+    li {
+        margin: 1%;
+    }
+
+}
+
