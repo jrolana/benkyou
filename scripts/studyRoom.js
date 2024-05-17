@@ -58,13 +58,14 @@ function getGoal(data = null) {
 }
 
 function addGoal(data) {
-    if (getGoal(data)) {
+    if (getGoal(data) != false) {
         alert("Item already added in todo");
     } else {
         let goalList = getGoal();
         goalList = (goalList != false) ? goalList : [];
         goalList.push(data);
         goalList = JSON.stringify(goalList);
+        console.log(goalList);
         localStorage.setItem("goals", goalList);
     }
 }
@@ -74,7 +75,7 @@ function listGoal() {
     let goalList = getGoal();
     if (goalList) {
         goalList.forEach((value, item) => {
-            html += `<li>${value} &nbsp;&nbsp;&nbsp;<button onclick="removeData(${item})">Remove</button></li>`;
+            html += `<li>${value}<button onclick="removeData(${item})">x</button></li>`;
         })
     }
     document.getElementById("goal-list").innerHTML = html;
