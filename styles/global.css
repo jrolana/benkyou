@@ -84,6 +84,11 @@ li {
         background-color: var(--color-tertiary);
         color: var(--color-primary);
     }
+
+    a:not(.active-page):hover {
+        background-color: var(--color-secondary);
+        color: var(--color-primary);
+    }
 }
 
 .logo {
