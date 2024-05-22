@@ -11,9 +11,7 @@
     padding: 0;
     margin: 2% 8% 2% 15%;
     background-color: var(--color-secondary);
-    border-left: 2px solid var(--color-tertiary);
-    border-top: 2px solid var(--color-tertiary);
-    border-bottom: 2px solid var(--color-tertiary);
+    border: 2px solid var(--color-tertiary);
     height: 90%;
     box-sizing: border-box;
 }
@@ -25,6 +23,7 @@
     overflow-y: auto;
     margin: 0px;
     padding: 1%;
+    border-right: 2px solid var(--color-tertiary);
     box-sizing: border-box;
 }
 
@@ -54,6 +53,11 @@
     border: 2px solid var(--color-tertiary);
 }
 
+.selectsub {
+    text-align: center;
+    margin: 4% 0;
+}
+
 .modulelists{
     display: flex;
     flex-wrap: wrap;
@@ -63,13 +67,30 @@
 }
 
 .modules{
+    display: flex;
     background-color: var(--color-primary);
     border: 2px solid var(--color-tertiary);
     color-interpolation: var(--color-tertiary);
+    color: var(--color-primary);
     width: 45.25%;
     margin: 2%;
-    padding: 2% 0;
     box-sizing: border-box;
+}
+
+.modulename {
+    padding: 3% 75% 3% 3%;
+    color: var(--color-tertiary);
+    display: flex;
+}
+
+.moduleset {
+    background-color: var(--color-tertiary);
+    border: 2px solid var(--color-tertiary);
+    color: var(--color-primary);
+    text-align: center;
+    display: flex;
+    width: 92%;
+    padding: 2.5% 2.5%;
 }
 
 .uploadbttn {
@@ -80,7 +101,17 @@
     display: flex;
     margin-left: 2%;
     padding: 1% 1.5%;
+}
 
+.addbttn {
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-tertiary);
+    color: var(--color-tertiary);
+    text-align: center;
+    display: flex;
+    width: 92%;
+    margin-left: 4%;
+    padding: 6% 5%;
 }
 
 ::-webkit-scrollbar {
@@ -90,7 +121,6 @@
 ::-webkit-scrollbar-track {
     background: var(--color-primary); 
     border-left: 2px solid var(--color-tertiary);
-    border-right: 2px solid var(--color-tertiary);
 }
 
 ::-webkit-scrollbar-thumb {
