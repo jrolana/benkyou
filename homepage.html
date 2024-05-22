@@ -1,125 +1,206 @@
+<!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Materials</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-    rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="styles/homepage.css">
+    <link rel="stylesheet" href="styles\homepage.css">
+    <script src="styles\HomePage.js"></script>
 </head>
-
 <body>
-  <nav>
-    <ul id="navbar">
-      <li class="logo">
-        <div class="logo-figure"></div>
-        <p class="logo-text">べんきょう</p>
-      </li>
-      <li><a class="active-page" href="homepage.html">Home</a></li>
-      <li><a href="study-room.html">Study Room</a></li>
-      <li><a href="materials.html">Materials</a></li>
-    </ul>
-  </nav>
 
-
-  <div class="banner">
-    <p id="greetings"> WELCOME TO BENKYOU</p>
-
-  </div>
-
-  <div class="Calendar">
-    <div class="month">
-      <ul>
-        <li class="prev">&#10094;</li>
-        <li class="next">&#10095;</li>
-        <li>MARCH<br><span style="font-size:18px"></li>
-      </ul>
-    </div>
-
-    <div class="username">
-      <p id="greetings"> Enjoy your study session!</p>
-      <p id="logout"> Log out</p>
-    </div>
-
-    <div class="month">
-      <ul>
-        <li class="prev">&#10094;</li>
-        <li class="next">&#10095;</li>
-        <li>August<br><span style="font-size:18px">2021</span></li>
-      </ul>
-    </div>
-
-    <ul class="weekdays">
-      <li>M</li>
-      <li>T</li>
-      <li>W</li>
-      <li>Th</li>
-      <li>F</li>
-      <li>St</li>
-      <li>Sn</li>
-    </ul>
-
-    <ul class="days">
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-      <li>4</li>
-      <li>5</li>
-      <li>6</li>
-      <li>7</li>
-      <li>8</li>
-      <li>9</li>
-      <li><span class="active">10</span></li>
-      <li>11</li>
-      <li>12</li>
-      <li>13</li>
-      <li>14</li>
-      <li>15</li>
-      <li>16</li>
-      <li>17</li>
-      <li>18</li>
-      <li>19</li>
-      <li>20</li>
-      <li><span class="active">20</span></li>
-      <li>21</li>
-      <li>22</li>
-      <li>23</li>
-      <li>24</li>
-      <li>25</li>
-      <li>26</li>
-      <li>27</li>
-      <li>28</li>
-      <li>29</li>
-      <li>30</li>
-      <li>31</li>
-      <li><span class="active">30</span></li>
-      <li>31</li>
-    </ul>
-
-    <div class="MotiQ">
-
-      <p> "Motivational Quotes" </p>
-    </div>
-
-    <div class="Events">
-      <tr>
-        <p id="titleEvents"> IMPORTANT EVENTS </p>
-      </tr>
-      <tr>
-        <ul>
-          <li>12 My Birthday </li>
-          <li>12 dajdlad</li>
-          <li>13 jdadjakd;l</li>
+    <nav>
+        <ul id="navbar">
+            <li class="logo">
+                <div class="logo-figure"></div>
+                <p class="logo-text">べんきょう</p>
+            </li>
+            <li><a class="active-page" href="homepage.html">Home</a></li>
+            <li><a href="study-room.html">Study Room</a></li>
+            <li><a href="materials.html">Materials</a></li>
         </ul>
-      </tr>
+    </nav>
+
+    <div class="main">
+        <div class="Calendar">
+            <div class="month">
+                <ul>
+                    <li class="prev">&#10094;</li>
+                    <li class="next">&#10095;</li>
+                    <li id="month">MAY<br><span></span></li>
+                    <li id="year">2024</li>
+                </ul>
+            </div>
+  
+            <ul class="weekdays">
+                <li>M</li>
+                <li>T</li>
+                <li>W</li>
+                <li>Th</li>
+                <li>F</li>
+                <li>St</li>
+                <li>Sn</li>
+            </ul>
+  
+            <ul class="days">
+                <li>1</li>
+                <li>2</li>
+                <li>3</li>
+                <li>4</li>
+                <li>5</li>
+                <li>6</li>
+                <li>7</li>
+                <li>8</li>
+                <li>9</li>
+                <li><span class="active">10</span></li>
+                <li>11</li>
+                <li>12</li>
+                <li>13</li>
+                <li>14</li>
+                <li>15</li>
+                <li>16</li>
+                <li>17</li>
+                <li>18</li>
+                <li>19</li>
+                <li>20</li>
+                <li>21</li>
+                <li>22</li>
+                <li>23</li>
+                <li>24</li>
+                <li>25</li>
+                <li>26</li>
+                <li>27</li>
+                <li>28</li>
+                <li>29</li>
+                <li>30</li>
+                <li>31</li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        <div class="eventBox">
+            <p id="header">IMPORTANT EVENTS</p>
+            <div class = "table">
+            <table class="eventsTable">
+
+                <tbody>
+                    <tr>
+                        <td id = "date">March 12</td>
+                        <td id ="tevent">Event 1 <button class="deleteButton" onclick="deleteEvent(this)">X</button></td>
+                       
+
+                    </tr>
+                    <tr>
+                        <td id = "date">March 15</td>
+                        <td id = "tevent">Event 2 <button class="deleteButton" onclick="deleteEvent()">X</button></td>
+                      
+                    </tr>
+                    <tr>
+                        <td id = "date">March 20</td>
+                        <td id = "tevent">Event 3 <button class="deleteButton" onclick="deleteEvent()">X</button></td>
+                        
+                    </tr>
+                    <tr>
+                        <td id = "date">March 20</td>
+                        <td id = "tevent">Event 3 <button class="deleteButton" onclick="deleteEvent()">X</button></td>
+                        
+                    </tr>
+                    <tr>
+                        <td id = "date">March 12</td>
+                        <td id ="tevent">Event 1 <button class="deleteButton" onclick="deleteEvent()">X</button></td>
+                       
+
+                    </tr>
+                    <tr>
+                        <td id = "date">March 15</td>
+                        <td id = "tevent">Event 2 <button class="deleteButton" onclick="deleteEvent()">X</button></td>
+                      
+                    </tr>
+                    <tr>
+                        <td id = "date">March 20</td>
+                        <td id = "tevent">Event 3 <button class="deleteButton" onclick="deleteEvent()">X</button></td>
+                        
+                    </tr>
+                    <tr>
+                        <td id = "date">March 20</td>
+                        <td id = "tevent">Event 3 <button class="deleteButton" onclick="deleteEvent()">X</button></td>
+                        
+                    </tr>
+                    <td id = "date">March 12</td>
+                    <td id ="tevent">Event 1 <button class="deleteButton" onclick="deleteEvent()">X</button></td>
+                   
+
+                </tr>
+                <tr>
+                    <td id = "date">March 15</td>
+                    <td id = "tevent">Event 2 <button class="deleteButton" onclick="deleteEvent()">X</button></td>
+                  
+                </tr>
+                <tr>
+                    <td id = "date">March 20</td>
+                    <td id = "tevent">Event 3 <button class="deleteButton" onclick="deleteEvent()">X</button></td>
+                    
+                </tr>
+                <tr>
+                    <td id = "date">March 20</td>
+                    <td id = "tevent">Event 3 <button class="deleteButton" onclick="deleteEvent()">X</button></td>
+                    
+                </tr>
+                <tr>
+                    <td id = "date">March 12</td>
+                    <td id ="tevent">Event 1 <button class="deleteButton" onclick="deleteEvent()">X</button></td>
+                   
+
+                </tr>
+                <tr>
+                    <td id = "date">March 15</td>
+                    <td id = "tevent">Event 2 <button class="deleteButton" onclick="deleteEvent()">X</button></td>
+                  
+                </tr>
+                <tr>
+                    <td id = "date">March 20</td>
+                    <td id = "tevent">Event 3 <button class="deleteButton" onclick="deleteEvent()">X</button></td>
+                    
+                </tr>
+                <tr>
+                    <td id = "date">March 20</td>
+                    <td id = "tevent">Event 3 <button class="deleteButton" onclick="deleteEvent()">X</button></td>
+                    
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+            <button  class="addButton" onclick="addEvent()">Add Event</button>
+        </div>
+
+
+
+        <div class="landscape">
+            
+            <div class="mountains">
+                <div class="sun"></div>
+              <div class="mountain mountain1"></div>
+              <div class="mountain mountain2"></div>
+            </div>
+            <p class="quote">Your motivational quote here...
+                Your motivational quote here...
+                Your motivational quote here...
+                Your motivational quote here...
+                Your motivational quote here...Your motivational quote here...Your motivational quote here...Your motivational quote here...
+            </p>
+
+
+        </div>
+        
     </div>
-
 </body>
-
 </html>

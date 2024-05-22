@@ -1,0 +1,118 @@
+@import url("global.css");
+
+
+body{
+    font-family: "Quattrocento Sans", sans-serif;
+    background-color:  var(--color-tertiary);
+    border: 50px solid  var(--color-primary);
+    overflow:hidden;
+
+}
+.main1{
+    border: 5px solid  var(--color-secondary);
+    
+}
+
+p{
+    color:  var(--color-tertiary);
+}
+
+.intro {
+    text-align: left;
+    margin-top: 10%;
+    margin-left: 2%;
+    color: var(--color-primary);
+    
+
+}
+
+.intro ul{
+    list-style-type: none; 
+}
+
+.benkyouJ{
+    font-size: 5rem;
+    font-family: "DotGothic16", sans-serif;
+    margin-bottom: 1%;
+}
+
+.benkyouE {
+    font-family: "Quattrocento", sans-serif;
+    font-size: 3rem; 
+}
+
+#smallIntro {
+    font-size: 1.2rem; 
+    margin-right: 70%;
+ 
+}
+
+
+.studyButton {
+    font-size: 1.5rem; 
+    padding: 5px 40px;
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 70.5%;
+}
+
+.studyButton:hover {
+    background-color: #b0856d;
+}
+
+.landscape {
+    position: absolute;
+    right: 17%; 
+    top: 0%; 
+    width: 37%; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; 
+    
+  }
+  
+  .sun {
+    width: 250px; 
+    height: 250px; 
+    background-color: var(--color-secondary);
+    border-radius: 50%;
+    position:relative;
+    margin-top: 15%;
+    margin-left: 43%;
+  
+  }
+  
+  .mountains {
+    position:relative;
+    height: 100px; 
+    width: 120%;
+  
+  }
+  
+  .mountain {
+    width: 0%;
+    border-left: 200px solid transparent;
+    border-right: 200px solid transparent;
+    position: absolute;
+    margin-top: 50%;
+    margin-left: 20%;
+  }
+  
+  .mountain1 {
+    border-bottom: 300px solid #B7B7A4;
+    top: 100%;
+    left: 10%; 
+    z-index: 2; 
+  
+  }
+  
+  .mountain2 {
+    border-bottom: 400px solid #A5A58D;
+    top: -10%;
+    left: 50%;
+    z-index: 1;
+  }
