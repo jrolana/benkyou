@@ -12,6 +12,10 @@
         href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link rel="stylesheet" href="styles/study-room.css">
 </head>
 
@@ -28,24 +32,68 @@
         </ul>
     </nav>
 
-    <div class="pomodoro">
-        <p>Pomodoro Timer</p>
-        <p id="pomodoro-text">25:00</p>
-        <button id="pomodoro-start-btn">Focus</button>
-        <button id="pomodoro-stop-btn">Give Up</button>
-    </div>
+    <main>
 
-    <div class="goals">
-        <p>Session Goals</p>
-        <form id="goal-form">
-            <input type="text" name="goal-input" placeholder="What's your goal?" required />
-            <input type="submit" name="goal-submit" value="+" />
-        </form>
-
-        <ul id="goal-list">
-
+        <ul class="widgets-bar" id="widgets-bar-1">
+            <li>
+                <button onclick=""><i class="fa fa-clock-o fa-2x" style="color:#6B705C;"></i></button>
+            </li>
+            <li>
+                <button onclick=""><i class="fa fa-check-square-o fa-2x" style="color:#6B705C;"></i></button>
+            </li>
         </ul>
-    </div>
+
+        <ul class="widgets-bar" id="widgets-bar-2">
+            <li>
+                <button onclick=""><i class="fa fa-file-image-o"
+                        style="margin-top: 14%; font-size: 23px; color:#6B705C;"></i></button>
+            </li>
+            <li>
+                <button onclick=""><i class="fa fa-spotify fa-2x" style="color:#6B705C;"></i></button>
+            </li>
+        </ul>
+
+        <div class="pomodoro">
+            <p>Pomodoro Timer</p>
+            <p id="pomodoro-text">25:00</p>
+            <button id="pomodoro-start-btn">Focus</button>
+            <button id="pomodoro-stop-btn">Give Up</button>
+        </div>
+
+        <div class="goals">
+            <p>Session Goals</p>
+            <form id="goal-form">
+                <input type="text" name="goal-input" placeholder="What's your goal?" required />
+                <input type="submit" name="goal-submit" value="+" />
+            </form>
+
+            <ul class="goal-list">
+                <li>Goal 1<button>x</button></li>
+                <li>Goal 1<button>x</button></li>
+                <li>Goal 1<button>x</button></li>
+                <li class="completed">Goal 1<button>x</button></li>
+            </ul>
+        </div>
+
+        <div class="background">
+            <p>Choose your background</p>
+
+            <ul class="bg-list">
+                <li><button>Default</button></li>
+                <li><button>Pitch Black</button></li>
+                <li>Online Picture
+                    <form id="bg-form">
+                        <input type="text" name="bg-link" placeholder="Paste url here" required />
+                        <input type="submit" name="bg-link-btn" value="/" />
+                    </form>
+                </li>
+            </ul>
+        </div>
+
+        <iframe class="music" src="https://open.spotify.com/embed/playlist/671ZWlQMPSY2IO6Ot7b57V?utm_source=generator"
+            width="50%" height="352" frameBorder="0" allowfullscreen=""
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+    </main>
 
     <script src="scripts/studyRoom.js"></script>
 </body>
