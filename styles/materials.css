@@ -1,5 +1,10 @@
 @import url("global.css");
 
+.materialsnavbar {
+    top: 0;
+    left: 0;
+}
+
 .materialscontainer {
     display: flex;
     justify-content: space-between;
@@ -17,4 +22,113 @@
     text-align: left;
     overflow-y: auto;
     margin: 0px;
+    padding: 1%;
+    border-right: 2px solid var(--color-tertiary);
+    box-sizing: border-box;
+}
+
+.subjectitem {
+    background-color: var(--color-tertiary);
+    color: var(--color-primary);
+    margin: 2% 4%;
+    padding: 10px;
+}
+
+.materialslist {
+    overflow-x: auto;
+    background-color: var(--color-secondary);
+    height: 100%;
+    width: 100%;
+}
+
+.subjecttitle {
+    font-size: 2em;
+    width: 90%;
+    margin: 2%;
+    padding: 2%;
+    height: 5%;
+    text-align: left;
+    background-color: var(--color-primary);
+    color: var(--color-tertiary);
+    border: 2px solid var(--color-tertiary);
+}
+
+.selectsub {
+    text-align: center;
+    margin: 4% 0;
+}
+
+.modulelists{
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: auto; 
+    height: 10%
+    padding: 1%;
+}
+
+.modules{
+    display: flex;
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-tertiary);
+    color-interpolation: var(--color-tertiary);
+    color: var(--color-primary);
+    width: 45.25%;
+    margin: 2%;
+    box-sizing: border-box;
+}
+
+.modulename {
+    padding: 3% 75% 3% 3%;
+    color: var(--color-tertiary);
+    display: flex;
+}
+
+.moduleset {
+    background-color: var(--color-tertiary);
+    border: 2px solid var(--color-tertiary);
+    color: var(--color-primary);
+    text-align: center;
+    display: flex;
+    width: 92%;
+    padding: 2.5% 2.5%;
+}
+
+.uploadbttn {
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-tertiary);
+    color: var(--color-tertiary);
+    text-align: center;
+    width: 9.5%;
+    display: flex;
+    margin-left: 2%;
+    padding: 1% 1.5%;
+    box-sizing: border-box;
+}
+
+.uploadinput {
+    display: none;
+}
+
+.addbttn {
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-tertiary);
+    color: var(--color-tertiary);
+    text-align: center;
+    display: flex;
+    width: 92%;
+    margin-left: 4%;
+    padding: 6% 5%;
+}
+
+::-webkit-scrollbar {
+    width: 15px; 
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-primary); 
+    border-left: 2px solid var(--color-tertiary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-tertiary);
 }
