@@ -1,5 +1,10 @@
 @import url("global.css");
 
+
+body {
+    background-color: var(--color-primary);
+}
+
 .materialsnavbar {
     top: 0;
     left: 0;
@@ -16,7 +21,7 @@
     box-sizing: border-box;
 }
 
-.subjectslist {
+#subjects-list {
     width: 25%;
     background-color: var(--color-primary);
     text-align: left;
@@ -27,21 +32,21 @@
     box-sizing: border-box;
 }
 
-.subjectitem {
+.subject-item {
     background-color: var(--color-tertiary);
     color: var(--color-primary);
     margin: 2% 4%;
     padding: 10px;
 }
 
-.materialslist {
+.materials-list {
     overflow-x: auto;
     background-color: var(--color-secondary);
     height: 100%;
     width: 100%;
 }
 
-.subjecttitle {
+#subject-title {
     font-size: 2em;
     width: 90%;
     margin: 2%;
@@ -56,44 +61,29 @@
 .selectsub {
     text-align: center;
     margin: 4% 0;
+    color: var(--color-tertiary);
 }
 
-.modulelists{
+#module-lists {
     display: flex;
     flex-wrap: wrap;
-    overflow-y: auto; 
-    height: 10%
-    padding: 1%;
+    overflow-y: auto;
+
 }
 
-.modules{
+.modules {
     display: flex;
     background-color: var(--color-primary);
     border: 2px solid var(--color-tertiary);
-    color-interpolation: var(--color-tertiary);
-    color: var(--color-primary);
+    color: var(--color-tertiary);
+    text-align: center;
     width: 45.25%;
     margin: 2%;
     box-sizing: border-box;
+    padding: 3%;
 }
 
-.modulename {
-    padding: 3% 75% 3% 3%;
-    color: var(--color-tertiary);
-    display: flex;
-}
-
-.moduleset {
-    background-color: var(--color-tertiary);
-    border: 2px solid var(--color-tertiary);
-    color: var(--color-primary);
-    text-align: center;
-    display: flex;
-    width: 92%;
-    padding: 2.5% 2.5%;
-}
-
-.uploadbttn {
+#uploadbttn {
     background-color: var(--color-primary);
     border: 2px solid var(--color-tertiary);
     color: var(--color-tertiary);
@@ -121,11 +111,11 @@
 }
 
 ::-webkit-scrollbar {
-    width: 15px; 
+    width: 15px;
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--color-primary); 
+    background: var(--color-primary);
     border-left: 2px solid var(--color-tertiary);
 }
 

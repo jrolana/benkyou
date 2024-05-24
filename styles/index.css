@@ -45,7 +45,7 @@ ul.intro {
   width: 40%;
 }
 
-.study-btn input[type="button"] {
+#study-btn {
 
   background-color: var(--color-secondary);
   border: none;
@@ -58,7 +58,7 @@ ul.intro {
   text-align: center;
 }
 
-.study-btn input[type="button"]:hover {
+#study-btn:hover {
   background-color: var(--color-primary);
   color: var(--color-tertiary);
 }
