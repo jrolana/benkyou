@@ -11,7 +11,7 @@
     href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
     rel="stylesheet">
 
-  <link rel="stylesheet" href="styles/landingpage.css">
+  <link rel="stylesheet" href="styles/index.css">
 </head>
 
 <body>
@@ -24,8 +24,8 @@
         Have a Wonderful Time Studying Here!!!
         Random words asdfgghjkklqweretvmdslkfap
       </li>
-      <li class="study-btn">
-        <input type="button" onclick="window.location.href='homepage.html'" value="STUDY NOW"></input>
+      <li>
+        <button id="study-btn" onclick="signIn()">STUDY NOW</button>
       </li>
     </ul>
 
@@ -39,6 +39,11 @@
     </div>
   </main>
 
+  <script type="module">
+    import { signIn } from './functions.js';
+
+    window.signIn = signIn;
+  </script>
 </body>
 
 </html>

@@ -27,119 +27,35 @@
         </ul>
     </nav>
 
-    <div class="materialscontainer">
-        <div class="subjectslist">
-            <h3 class="selectsub"> Select Subject </h3>
-            <button class="addbttn"> Add Subject </button>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-            <div class="subjectitem" id="subjectitem"> Subject </div>
-        </div>
-        <div class="materialslist">
-            <header>
-                <div class="subjecttitle"> Subject title </div>
-                <form>
-                    <label for="uploadfile" class="uploadbttn"> Upload </label>
-                    <input type="file" id="uploadfile" name="uploadfile" class="uploadinput">
-                </form>
-            </header>
-            <div class="modulelists">
-                <div class="modules"> 
-                    <div class="modulename"> Module </div>
-                    <button class="moduleset"><strong> ... </strong></button>
-                </div>
-                <div class="modules"> 
-                    <div class="modulename"> Module </div>
-                    <button class="moduleset"><strong> ... </strong></button>
-                </div>
-                <div class="modules"> 
-                    <div class="modulename"> Module </div>
-                    <button class="moduleset"><strong> ... </strong></button>
-                </div>
-                <div class="modules"> 
-                    <div class="modulename"> Module </div>
-                    <button class="moduleset"><strong> ... </strong></button>
-                </div>
-                <div class="modules"> 
-                    <div class="modulename"> Module </div>
-                    <button class="moduleset"><strong> ... </strong></button>
-                </div>
-                <div class="modules"> 
-                    <div class="modulename"> Module </div>
-                    <button class="moduleset"><strong> ... </strong></button>
-                </div>
-                <div class="modules"> 
-                    <div class="modulename"> Module </div>
-                    <button class="moduleset"><strong> ... </strong></button>
-                </div>
-                <div class="modules"> 
-                    <div class="modulename"> Module </div>
-                    <button class="moduleset"><strong> ... </strong></button>
-                </div>
-                <div class="modules"> 
-                    <div class="modulename"> Module </div>
-                    <button class="moduleset"><strong> ... </strong></button>
-                </div>
-                <div class="modules"> 
-                    <div class="modulename"> Module </div>
-                    <button class="moduleset"><strong> ... </strong></button>
-                </div>
-                <div class="modules"> 
-                    <div class="modulename"> Module </div>
-                    <button class="moduleset"><strong> ... </strong></button>
-                </div>
-                <div class="modules"> 
-                    <div class="modulename"> Module </div>
-                    <button class="moduleset"><strong> ... </strong></button>
-                </div>
-                <div class="modules"> 
-                    <div class="modulename"> Module </div>
-                    <button class="moduleset"><strong> ... </strong></button>
-                </div>
-                <div class="modules"> 
-                    <div class="modulename"> Module </div>
-                    <button class="moduleset"><strong> ... </strong></button>
-                </div>
-                <div class="modules"> 
-                    <div class="modulename"> Module </div>
-                    <button class="moduleset"><strong> ... </strong></button>
-                </div>
-                <div class="modules"> 
-                    <div class="modulename"> Module </div>
-                    <button class="moduleset"><strong> ... </strong></button>
-                </div>
-                <div class="modules"> 
-                    <div class="modulename"> Module </div>
-                    <button class="moduleset"><strong> ... </strong></button>
-                </div>
-                <div class="modules"> 
-                    <div class="modulename"> Module </div>
-                    <button class="moduleset"><strong> ... </strong></button>
+    <main>
+
+        <div class="materialscontainer">
+            <div id="subjects-list">
+                <h3 class="selectsub"> Select Subject </h3>
+                <button class="addbttn"> Add Subject </button>
+            </div>
+            <div class="materials-list">
+                <header>
+                    <div id="subject-title"> Subject title </div>
+                    <form id="uploadForm">
+                        <label for="uploadedFile" id="uploadbttn"> Upload </label>
+                        <input type="file" id="uploadedFile" name="uploadedFile" class="uploadinput">
+                    </form>
+                </header>
+                <div id="module-lists">
                 </div>
             </div>
         </div>
-    </div>
+    </main>
+
+
+    <script type="module" src="scripts/materials.js"></script>
+
+    <script type="module">
+        import { getResources } from '../functions.js';
+        window.getResources = getResources;
+    </script>
+
 </body>
 
 </html>
