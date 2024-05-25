@@ -24,12 +24,12 @@ body {
 #subjects-list {
     width: 25%;
     background-color: var(--color-primary);
-    text-align: left;
     overflow-y: auto;
     margin: 0px;
     padding: 1%;
     border-right: 2px solid var(--color-tertiary);
     box-sizing: border-box;
+    text-align: center;
 }
 
 .subject-item {

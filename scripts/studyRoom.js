@@ -80,7 +80,7 @@ function listGoal() {
     }
     document.getElementById("goal-list").innerHTML = html;
 }
-const goalForm = document.getElementById("goal-form");
+const goalForm = document.getElementById("input-form");
 goalForm.addEventListener("submit", (event) => {
     event.preventDefault();
 

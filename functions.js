@@ -1,6 +1,6 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js'
-import { getFirestore, collection, doc, setDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
+import { getFirestore, collection, doc, setDoc, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-storage.js";
 
 import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
@@ -32,7 +32,7 @@ export function signIn() {
         })
 }
 
-export function upload(file) {
+export function upload(file, subjectID) {
     const newUploadID = uuidv4();
     const uploadRef = ref(storage, newUploadID)
 
@@ -40,9 +40,9 @@ export function upload(file) {
         const link = await getDownloadURL(snapshot.ref);
         console.log(link);
 
-        const resourceDocRef = doc(db, "CMSC126", newUploadID);
+        const resourceDocRef = doc(db, "Subjects", subjectID, "Resources", newUploadID);
         await setDoc(resourceDocRef, {
-            title: "Document",
+            title: file.name,
             link,
         })
 
@@ -80,14 +80,31 @@ export async function getResources(subjectID) {
     const resourcesContainer = document.getElementById("module-lists");
     resourcesContainer.innerHTML = "";
     queryGetResources.forEach((resource) => {
+        const resourceData = resource.data();
+        console.log(resourceData);
+
+        if (resourceData.link == undefined) {
+            return;
+        }
+
         const resourceContainer = document.createElement("div");
         resourceContainer.classList.add("modules");
-        const resourceData = resource.data();
         resourceContainer.textContent = resourceData.title;
-        resourceContainer.setAttribute("onclick", resourceData.link);
+        resourceContainer.setAttribute("onclick", `window.location.href="${resourceData.link}"`);
 
         resourcesContainer.append(resourceContainer);
     })
 }
 
+export function addSubject(subjectID) {
+    const subjectRef = doc(db, "Subjects", subjectID);
+    const resourceRef = collection(db, "Subjects", subjectID, "Resources");
+
+    setDoc(subjectRef, {})
+        .then(() => {
+            addDoc(resourceRef, {})
+        }).then(() => {
+            alert("Added a subject succesfully!");
+        })
+}
 
