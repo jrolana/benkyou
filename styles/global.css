@@ -118,3 +118,25 @@ li {
     top: 30%;
     left: 20%;
 }
+
+/* || Shared */
+
+.input-form {
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+
+input[type="text"] {
+    background-color: var(--color-primary);
+    border: 2px solid var(--color-tertiary);
+    width: 75%;
+    padding: 1%;
+    font-style: italic;
+}
+
+input[type="submit"] {
+    background-color: var(--color-tertiary);
+    border: none;
+    color: var(--color-primary);
+    font-size: 20px;
+}

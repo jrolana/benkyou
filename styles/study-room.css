@@ -38,21 +38,6 @@
     }
 }
 
-
-input[type="text"] {
-    background-color: var(--color-primary);
-    border: 2px solid var(--color-tertiary);
-    padding: 1%;
-    font-style: italic;
-}
-
-input[type="submit"] {
-    background-color: var(--color-tertiary);
-    border: none;
-    color: var(--color-primary);
-    font-size: 20px;
-}
-
 /* || Pomodoro */
 .pomodoro {
     top: 16%;
@@ -84,11 +69,6 @@ input[type="submit"] {
 .goals {
     top: 44%;
     left: 15%;
-}
-
-#goal-form {
-    margin-top: 5%;
-    margin-bottom: 5%;
 }
 
 .goal-list {

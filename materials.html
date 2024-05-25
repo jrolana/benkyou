@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -28,11 +29,14 @@
     </nav>
 
     <main>
-
         <div class="materialscontainer">
             <div id="subjects-list">
                 <h3 class="selectsub"> Select Subject </h3>
-                <button class="addbttn"> Add Subject </button>
+                <form id="add-subj-form">
+                    <input type="text" name="added-subj" placeholder="Add Subject" required />
+                    <input type="submit" name="add-btn" value="+" />
+                </form>
+                <!-- <button class="addbttn"> Add Subject </button> -->
             </div>
             <div class="materials-list">
                 <header>
@@ -48,14 +52,12 @@
         </div>
     </main>
 
-
     <script type="module" src="scripts/materials.js"></script>
 
     <script type="module">
         import { getResources } from '../functions.js';
         window.getResources = getResources;
     </script>
-
 </body>
 
 </html>
