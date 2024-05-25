@@ -45,7 +45,7 @@ ul.intro {
   width: 40%;
 }
 
-#study-btn {
+#signin-btn {
 
   background-color: var(--color-secondary);
   border: none;
@@ -58,9 +58,14 @@ ul.intro {
   text-align: center;
 }
 
-#study-btn:hover {
+#signin-btn:not(.disabled):hover {
   background-color: var(--color-primary);
   color: var(--color-tertiary);
+}
+
+.disabled {
+  background-color: #a37c66 !important;
+  color: #beaea2;
 }
 
 

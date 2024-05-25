@@ -23,7 +23,9 @@ const storage = getStorage();
 
 export function signIn() {
     signInWithPopup(auth, provider)
-        .then(() => {
+        .then((result) => {
+            const currentUser = result.user;
+            console.log(currentUser);
             window.location.href = 'homepage.html';
         }
         ).catch((error) => {
@@ -51,12 +53,18 @@ export function upload(file, subjectID) {
 }
 
 onAuthStateChanged(auth, (user) => {
-    // if (user) {
-    //     const signInBtn = document.getElementById("study-btn");
+    if (user) {
+        console.log("User is logged in");
+        console.log(user);
+        const signInBtn = document.getElementById("signin-btn");
+        signInBtn.setAttribute("disabled", true);
+        signInBtn.classList.add("disabled");
+        signInBtn.textContent = "LOGGED IN";
 
-    //     signInBtn.setAttribute("disabled", true);
-    //     window.location.href = 'homepage.html';
-    // }
+    } else {
+        console.log("User is not logged in");
+        console.log(user);
+    }
 })
 
 export async function getSubjects(subjectsContainer) {
