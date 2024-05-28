@@ -72,6 +72,7 @@ main {
   border: 2px solid #526C50;
   box-sizing: border-box;
   position: fixed;
+  background-color: var(--color-primary);
 
 
 }
@@ -84,7 +85,7 @@ main {
   background: #FFE8D6;
   border-right: 2px solid #526C50;
   position: relative;
-
+  background-color: var(--color-primary);
   color: var(--color-tertiary);
   font-size: 1rem;
   text-transform: uppercase;
@@ -92,11 +93,21 @@ main {
   font-weight: bold;
 }
 
-/* .month ul {
-  margin: 0;
-  padding: 0;
+.current-date {
+  margin-top: 2%;
+  padding: 1%;
   list-style-type: none;
-} */
+  color: var(--color-tertiary);
+  background-color: var(--color-primary);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  display: relative;
+  float: center;
+  align-items: center;
+ 
+} 
 
 /* .month ul li {
   color: var(--color-tertiary);
@@ -110,19 +121,32 @@ main {
   color: #A5A58D;
 } */
 
+.icons{
+  color: var(--color-tertiary);
+  display: relative;
+  margin-top: -8%;
+  margin-bottom: 13%;
+  margin-left: 2%;
+  margin-right: 2%;
+  
 
+}
 #prev {
-  font-size: 1rem;
+  font-size: 2rem;
   float: left;
+ 
+
+  
 }
 
 
 #next {
-  font-size: 1rem;
+  font-size: 2rem;
   float: right;
 }
 
 .weeks {
+
   display: flex;
   justify-content: space-between;
   padding: 10px 0;

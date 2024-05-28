@@ -76,7 +76,6 @@ ul.intro {
   min-width: min-content;
 }
 
-<<<<<<< HEAD
 .gsi-material-button .gsi-material-button-icon {
   height: 20px;
   margin-right: 12px;
@@ -149,10 +148,6 @@ ul.intro {
   opacity: 8%;
 }
 #study-btn {
-=======
-#signin-btn {
-
->>>>>>> 921331e6f029fb07a9774fadd5f8254757a6fdc3
   background-color: var(--color-secondary);
   border: none;
   padding: 1.25% 2.5%;
