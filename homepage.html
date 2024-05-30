@@ -11,8 +11,11 @@
     <link
         href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 
     <link rel="stylesheet" href="styles\homepage.css">
+    <script src="scripts\homepage.js"defer></script>
 </head>
 
 <body>
@@ -28,81 +31,54 @@
             <li><a href="materials.html">Materials</a></li>
         </ul>
     </nav>
-
+    <banner>
+        <ul class ="UNplaceHolder">
+            <li class= "profilePic">
+                <span class="material-symbols-outlined">account_circle</span>
+            </li>
+            <li><button id="logout-btn" onclick="logout()">Log out</button></li>
+            <li id = "googleMail">googleaccount@up.edu.ph</li>
+            <li id ="greeting"> Enjoy your study session!</li>
+            
+        </ul>
+    </banner>
     <main>
-        <div class="calendar">
-            <div class="month">
-                <ul>
-                    <li class="prev">&#10094;</li>
-                    <li class="next">&#10095;</li>
-                    <li id="month" class="quattrocento-sans-bold">MAY</li>
-                    <li id="year">2024</li>
-                </ul>
+        <div class="wrapper">
+            <header>
+              <p class="current-date"></p>
+              <div class="icons">
+                <span id="prev" class="material-symbols-rounded">chevron_left</span>
+                <span id="next" class="material-symbols-rounded">chevron_right</span>
+              </div>
+            </header>
+            <div class="calendar">
+              <ul class="weeks">
+                <li>Sun</li>
+                <li>Mon</li>
+                <li>Tue</li>
+                <li>Wed</li>
+                <li>Thu</li>
+                <li>Fri</li>
+                <li>Sat</li>
+              </ul>
+              <ul class="days"></ul>
             </div>
-
-            <ul class="weekdays">
-                <li>M</li>
-                <li>T</li>
-                <li>W</li>
-                <li>Th</li>
-                <li>F</li>
-                <li>St</li>
-                <li>Sn</li>
-            </ul>
-
-            <ul class="days">
-                <li id="1">1</li>
-                <li id="2">2</li>
-                <li id="3">3</li>
-                <li id="4">4</li>
-                <li id="5">5</li>
-                <li id="6">6</li>
-                <li id="7">7</li>
-                <li id="8">8</li>
-                <li id="9">9</li>
-                <li id="10"><span class="active">10</span></li>
-                <li id="11">11</li>
-                <li id="12">12</li>
-                <li id="13">13</li>
-                <li id="14">14</li>
-                <li id="15">15</li>
-                <li id="16">16</li>
-                <li id="17">17</li>
-                <li id="18">18</li>
-                <li id="19">19</li>
-                <li id="20">20</li>
-                <li id="21">21</li>
-                <li id="22">22</li>
-                <li id="23">23</li>
-                <li id="24">24</li>
-                <li id="25">25</li>
-                <li id="26">26</li>
-                <li id="27">27</li>
-                <li id="28">28</li>
-                <li id="29">29</li>
-                <li id="30">30</li>
-                <li id="31">31</li>
-                <li></li>
-                <li></li>
-                <li></li>
-                <li></li>
-            </ul>
-        </div>
+          </div>
 
         <div id="event-box">
             <p id="header">IMPORTANT EVENTS</p>
+            <div class = "table">
             <table id="events-table">
-                <tbody>
-                    <tr>
-                        <td id="date">March 12</td>
-                        <td id="tevent">Event 1 <button class="delete-btn" onclick="deleteEvent(this)">X</button>
-                        </td>
-                    </tr>
+                <tbody id = "events-list">
 
                 </tbody>
             </table>
-            <button id="add-btn" onclick="addEvent()">Add Event</button>
         </div>
+            <button id="add-btn" onclick="addEventWindow()">Add Event</button>
+
+        </div>
+
+
 
         <div class="landscape">
             <div class="mountains">
@@ -110,13 +86,12 @@
                 <div class="mountain mountain2"></div>
                 <div class="mountain mountain1"></div>
             </div>
-            <p id="quote" class="quattrocento-sans-regular-italic">Your motivational quote here...
-                Your motivational quote here...
-                Your motivational quote here...
-                Your motivational quote here...
-                Your motivational quote here...Your motivational quote here...Your motivational quote here...Your
-                motivational quote here...
+            
+            <p id="quote" class="quattrocento-sans-regular-italic">
+  
+                <p id ="author" class = "quattrocento-sans-regular-italic"></p>
             </p>
+            
         </div>
     </main>
 </body>
