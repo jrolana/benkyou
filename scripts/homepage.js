@@ -1,23 +1,23 @@
 // Calendar:
 
 const daysTag = document.querySelector(".days"),
-currentDate = document.querySelector(".current-date"),
-prevNextIcon = document.querySelectorAll(".icons span");
+    currentDate = document.querySelector(".current-date"),
+    prevNextIcon = document.querySelectorAll(".icons span");
 
 // getting new date, current year and month
 let date = new Date(),
-currYear = date.getFullYear(),
-currMonth = date.getMonth();
+    currYear = date.getFullYear(),
+    currMonth = date.getMonth();
 
 // storing full name of all months in array
 const months = ["January", "February", "March", "April", "May", "June", "July",
-              "August", "September", "October", "November", "December"];
+    "August", "September", "October", "November", "December"];
 
 const renderCalendar = () => {
     let firstDayofMonth = new Date(currYear, currMonth, 1).getDay(),
-    lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(), 
-    lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay(); 
- 
+        lastDateofMonth = new Date(currYear, currMonth + 1, 0).getDate(),
+        lastDayofMonth = new Date(currYear, currMonth, lastDateofMonth).getDay();
+
     let liTag = "";
 
     for (let i = firstDayofMonth; i > 0; i--) { // creating li of previous month last days
@@ -26,8 +26,8 @@ const renderCalendar = () => {
 
     for (let i = 1; i <= lastDateofMonth; i++) { // creating li of all days of current month
         // adding active class to li if the current day, month, and year matched
-        let isToday = i === date.getDate() && currMonth === new Date().getMonth() 
-                     && currYear === new Date().getFullYear() ? "active" : "";
+        let isToday = i === date.getDate() && currMonth === new Date().getMonth()
+            && currYear === new Date().getFullYear() ? "active" : "";
         liTag += `<li class="${isToday}">${i}</li>`;
     }
 
@@ -44,7 +44,7 @@ prevNextIcon.forEach(icon => { // getting prev and next icons
         // if clicked icon is previous icon then decrement current month by 1 else increment it by 1
         currMonth = icon.id === "prev" ? currMonth - 1 : currMonth + 1;
 
-        if(currMonth < 0 || currMonth > 11) { // if current month is less than 0 or greater than 11
+        if (currMonth < 0 || currMonth > 11) { // if current month is less than 0 or greater than 11
             // creating a new date of current year & month and pass it as date value
             date = new Date(currYear, currMonth, new Date().getDate());
             currYear = date.getFullYear(); // updating current year with new date year
@@ -65,7 +65,7 @@ function addEventWindow() {
     const height = 300;
     const left = (screen.width - width) / 2;
     const top = (screen.height - height) / 2;
-    window.open('addEvent.html', 'AddEventWindow', `width=${width},height=${height},top=${top},left=${left}`);
+    window.open('add-event.html', 'AddEventWindow', `width=${width},height=${height},top=${top},left=${left}`);
 
 }
 
@@ -100,7 +100,7 @@ async function getQuoteOfTheDay(url) {
             quoteElement.textContent = data.content;
             authorElement.textContent = data.author;
 
-          
+
             localStorage.setItem("quoteOfTheDay", JSON.stringify(data));
             localStorage.setItem("quoteDate", currentDate);
         } catch (error) {

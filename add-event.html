@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Event</title>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Quattrocento+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/global.css">
+    <link rel="stylesheet" href="styles/add-event.css">
+</head>
+
+<body>
+    <h1>Event Form</h1>
+    <div class="add-record-container">
+        <form id="eventForm" class="add-record-form" action="" method="post">
+            <label for="title">Event:</label>
+            <input type="text" id="title" name="event" required>
+
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" required>
+            <input type="submit" value="Submit" onclick="addEvent()">
+        </form>
+    </div>
+</body>
+
+</html>
