@@ -2,40 +2,119 @@
 @import url("global.css");
 
 main {
-  margin-left: 20%;
-  margin-top: 4%;
+  margin-left: 15%;
+  margin-top: 2%;
   position: absolute;
   overflow: hidden;
   margin-bottom: -10%;
 }
 
-.calendar {
-  width: 37.5%;
-  position: absolute;
+.UNplaceHolder {
+  display: flex;
+  position: fixed;
+  top: 2%;
+  left: 12.7%;
+  padding:2%;
+  padding-left: 2%;
+  width: 83.18%;
+  border: 2px solid #526C50;
+  border-left: none;
+  background-color: var(--color-primary);
+  color: var(--color-tertiary);
+  list-style-type: none;
+}
+
+
+.profilePic {
+  position: fixed;
+  background-color: #B7B7A4;
+  padding: 6px 12px;
+  margin-top: -1.4%;
+  border: solid 2px var(--color-tertiary);
+}
+
+
+#googleMail {
+  margin-left: 4%;
+  position: fixed;
+  margin-top: -1.3%;
+}
+
+#greeting {
+  margin-top: 0%;
+  position:fixed; 
+  font-size: 1.1rem; 
+  font-weight: 600;
+  margin-left: 4%;
+}
+
+#logout-btn {
+  margin-left: 75%; 
+  margin-top: -0.9%;
+  padding: 4px 15px; 
+  background-color: #B7B7A4;
+  color: var(--color-tertiary);
+  border: 2px solid var(--color-tertiary);
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: fixed;
+}
+
+#logout-btn:hover {
+  background-color: var(--color-tertiary);
+  color: var(--color-primary);
+}
+
+
+.wrapper {
+  width: 26.5%;
+  margin-top: 5%;
   border: 2px solid #526C50;
   box-sizing: border-box;
+  position: fixed;
+  background-color: var(--color-primary);
+
 
 }
 
-/* Month section styling */
-.month {
-  padding: 10%;
-  width: 80%;
-  /* Full width of the container */
+
+.header {
+  padding: 7%;
+  width: 86%;
   text-align: center;
   background: #FFE8D6;
   border-right: 2px solid #526C50;
   position: relative;
+  background-color: var(--color-primary);
+  color: var(--color-tertiary);
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
 }
 
-/* Month list styling */
-.month ul {
-  margin: 0;
-  padding: 0;
+.current-date {
+  margin-top: 2%;
+  padding: 1%;
   list-style-type: none;
-}
+  color: var(--color-tertiary);
+  background-color: var(--color-primary);
+  font-size: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: bold;
+  display: relative;
+  float: center;
+  align-items: center;
+ 
+} 
 
+<<<<<<< Updated upstream
+/* .month ul li {
+=======
+<<<<<<< Updated upstream
 .month ul li {
+>>>>>>> Stashed changes
   color: var(--color-tertiary);
   font-size: 1rem;
   text-transform: uppercase;
@@ -45,22 +124,42 @@ main {
 
 #year {
   color: #A5A58D;
+<<<<<<< Updated upstream
+} */
+=======
+=======
+>>>>>>> Stashed changes
+
+.icons{
+  color: var(--color-tertiary);
+  display: relative;
+  margin-top: -8%;
+  margin-bottom: 13%;
+  margin-left: 2%;
+  margin-right: 2%;
+  
+
+<<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 }
-
-
-.month .prev {
-  font-size: 1rem;
+#prev {
+  font-size: 2rem;
   float: left;
+ 
+
+  
 }
 
 
-.month .next {
-  font-size: 1rem;
+#next {
+  font-size: 2rem;
   float: right;
 }
 
+.weeks {
 
-.weekdays {
   display: flex;
   justify-content: space-between;
   padding: 10px 0;
@@ -69,7 +168,7 @@ main {
   width: 100%;
 }
 
-.weekdays li {
+.weeks li {
   color: var(--color-tertiary);
   text-align: center;
   font-weight: bold;
@@ -86,7 +185,7 @@ main {
   background-color: var(--color-primary);
   margin: 0;
   width: 100%;
-  height: 150px;
+  height: 140px;
 }
 
 .days li {
@@ -108,9 +207,9 @@ main {
 
 #event-box {
   background-color: var(--color-primary);
-  width: 35%;
+  width: 25%;
   height: 220px;
-  margin-top: 35%;
+  margin-top: 25%;
   border: 2px solid var(--color-tertiary);
   padding: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -118,6 +217,7 @@ main {
   flex-direction: column;
   overflow: hidden;
   margin-bottom: 20px;
+  position: fixed;
 }
 
 #header {
@@ -132,10 +232,8 @@ main {
 #events-table {
   width: 100%;
   border-collapse: collapse;
-
   display: flex;
   flex-direction: column;
-
   background-color: #f2f2f2;
 }
 
@@ -144,21 +242,20 @@ main {
   flex-grow: 1;
   overflow-y: auto;
   overflow-x: hidden;
-  max-height: 200px;
-  max-height: 110px;
+  max-height: 115px;
   scrollbar-width: thick;
   scrollbar-color: var(--color-tertiary) var(--color-primary);
   border-radius: 0px;
   background-color: var(--color-primary);
 }
 
-#events-table th,
+
 #events-table td {
   padding: 8px;
-  text-align: left;
+
 }
 
-#events-table thead,
+
 #events-table tbody tr {
   display: table;
   width: 100%;
@@ -172,8 +269,6 @@ main {
   background-color: var(--color-primary);
   color: var(--color-tertiary);
   border: 2px solid var(--color-tertiary);
-  padding-right: -2%;
-
   text-align: center;
 }
 
@@ -182,19 +277,19 @@ main {
   background-color: var(--color-tertiary);
   color: var(--color-primary);
   position: relative;
+  text-align: left;
 }
 
 #add-btn {
   display: block;
-  margin-top: 5%;
-  margin-left: 0px;
-  margin-right: 13%;
-
+  margin-top: 3%;
+  margin-left: 0%;
+  margin-right: 5%;
   padding: 10px 50px;
   background-color: var(--color-tertiary);
+  text-align: center;
   color: var(--color-primary);
   border: none;
-
   cursor: pointer;
   transition: background-color 0.3s;
 }
@@ -205,20 +300,19 @@ main {
 }
 
 #events-table tbody::-webkit-scrollbar {
-  width: 100%;
+  width: 15px;
 }
 
 #events-table tbody::-webkit-scrollbar-track {
   background: var(--color-primary);
+  border-left: 2px solid var(--color-tertiary);
 }
 
 #events-table tbody::-webkit-scrollbar-thumb {
-  background: var(--color-primary);
+  background: var(--color-tertiary);
 }
 
-#events-table tbody::-webkit-scrollbar-thumb:hover {
-  background: var(--color-primary);
-}
+
 
 
 .delete-btn {
@@ -236,26 +330,25 @@ main {
 }
 
 .landscape {
-  position: absolute;
-  right: 17%;
-  top: 0%;
-  width: 37%;
-  /* Increase the width */
+  position: fixed;
+  right: 20%;
+  top: 5%;
+  width: 35%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  /* Align items to the start to place sun at the top */
+
 }
 
 .sun {
-  width: 150px;
+  width: 180px;
   height: 150px;
   background-color: #E7B89F;
   border-radius: 50%;
   position: relative;
-  margin-top: 35%;
-  margin-left: 52.5%;
+  margin-top: 30%;
+  margin-left: 50%;
 
 }
 
@@ -271,25 +364,41 @@ main {
   border-right: 250px solid transparent;
   position: absolute;
   margin-top: 50%;
+  margin-left: 20%;
 }
 
 .mountain1 {
   border-bottom: 300px solid #B7B7A4;
   top: 100%;
-  right: 5%;
-  z-index: -1;
+  left: 10%;
+  z-index: 3;
+
 }
 
 .mountain2 {
   border-bottom: 400px solid #A5A58D;
-  top: 4%;
+  top: -10%;
   left: 50%;
-  z-index: -1;
+  z-index: 2;
 }
 
 #quote {
-  font-size: 20px;
   color: white;
-  text-align: right;
-  position: absolute;
+  font-size: 1.2rem;
+  text-align: center;
+  position: fixed;
+  top: 20%;
+  z-index: 3;
+  margin-left: 30%;
+  margin-right: 10%;
+}
+
+#author {
+  color: white;
+  font-size: 1.2rem;
+  text-align: center;
+  position: fixed;
+  top: 40%;
+  margin-left: 45%;
+  z-index: 3;
 }
