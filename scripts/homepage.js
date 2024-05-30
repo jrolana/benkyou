@@ -1,8 +1,3 @@
-<<<<<<< Updated upstream
-=======
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
 // Calendar:
 
 const daysTag = document.querySelector(".days"),
@@ -83,19 +78,8 @@ const quoteElement = document.getElementById("quote");
 const authorElement = document.getElementById("author");
 
 
-<<<<<<< Updated upstream
-// async function getQuote(url){
-//      const response = await fetch(url);
-//      var data = await response.json();
-//      quote.innerHTML = data.content;
-//      author.innerHTML = data.author;
 
-// }
 
-// getQuote(apiURL);
-
-=======
->>>>>>> Stashed changes
 async function getQuoteOfTheDay(url) {
     const storedQuote = JSON.parse(localStorage.getItem("quoteOfTheDay"));
     const storedDate = localStorage.getItem("quoteDate");
@@ -127,9 +111,4 @@ async function getQuoteOfTheDay(url) {
     }
 }
 
-<<<<<<< Updated upstream
 getQuoteOfTheDay(apiURL);
-=======
-getQuoteOfTheDay(apiURL);
->>>>>>> Stashed changes
->>>>>>> Stashed changes
