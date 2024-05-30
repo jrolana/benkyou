@@ -1,11 +1,11 @@
 /* Global import */
 @import url("global.css");
 main {
-  margin-left: 15%;
-  margin-top: 2%;
-  position: absolute;
-  overflow: hidden;
-  margin-bottom: -10%;
+      margin-left: 15%;
+      margin-top: 2%;
+      position: absolute;
+      overflow: hidden;
+      margin-bottom: -10%;
 }
 .UNplaceHolder {
   display: flex;
@@ -22,298 +22,327 @@ main {
   list-style-type: none;
 }
 
+.UNplaceHolder {
+      display: flex;
+      position: fixed;
+      top: 2%;
+      left: 12.7%;
+      padding: 2%;
+      padding-left: 2%;
+      width: 83.18%;
+      border: 2px solid #526C50;
+      border-left: none;
+      background-color: var(--color-primary);
+      color: var(--color-tertiary);
+      list-style-type: none;
+}
+
 .profilePic {
-  position: fixed;
-  background-color: #B7B7A4;
-  padding: 6px 12px;
-  margin-top: -1.4%;
-  border: solid 2px var(--color-tertiary);
+      position: fixed;
+      background-color: #B7B7A4;
+      padding: 6px 12px;
+      margin-top: -1.4%;
+      border: solid 2px var(--color-tertiary);
 }
 
 #googleMail {
-  margin-left: 4%;
-  position: fixed;
-  margin-top: -1.3%;
+      margin-left: 4%;
+      position: fixed;
+      margin-top: -1.3%;
 }
+
 #greeting {
-  margin-top: 0%;
-  position:fixed; 
-  font-size: 1.1rem; 
-  font-weight: 600;
-  margin-left: 4%;
+      margin-top: 0%;
+      position: fixed;
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-left: 4%;
 }
+
 #logout-btn {
-  margin-left: 75%; 
-  margin-top: -0.9%;
-  padding: 4px 15px; 
-  background-color: #B7B7A4;
-  color: var(--color-tertiary);
-  border: 2px solid var(--color-tertiary);
-  cursor: pointer;
-  transition: background-color 0.3s;
-  position: fixed;
+      margin-left: 75%;
+      margin-top: -0.9%;
+      padding: 4px 15px;
+      background-color: #B7B7A4;
+      color: var(--color-tertiary);
+      border: 2px solid var(--color-tertiary);
+      cursor: pointer;
+      transition: background-color 0.3s;
+      position: fixed;
 }
+
 #logout-btn:hover {
-  background-color: var(--color-tertiary);
-  color: var(--color-primary);
+      background-color: var(--color-tertiary);
+      color: var(--color-primary);
 }
 
 .wrapper {
-  width: 26.5%;
-  margin-top: 5%;
-  border: 2px solid #526C50;
-  box-sizing: border-box;
-  position: fixed;
-
+      width: 26.5%;
+      margin-top: 5%;
+      border: 2px solid #526C50;
+      box-sizing: border-box;
+      position: fixed;
+      background-color: var(--color-primary);
 }
 
 .header {
-  padding: 7%;
-  width: 86%;
-  text-align: center;
-  background: #FFE8D6;
-  border-right: 2px solid #526C50;
-  position: relative;
-  color: var(--color-tertiary);
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: bold;
+      padding: 7%;
+      width: 86%;
+      text-align: center;
+      background: #FFE8D6;
+      border-right: 2px solid #526C50;
+      position: relative;
+      color: var(--color-tertiary);
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
 }
-/* .month ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-} */
-/* .month ul li {
-  color: var(--color-tertiary);
-  font-size: 1rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: bold;
+
+.current-date {
+      margin-top: 2%;
+      padding: 1%;
+      list-style-type: none;
+      color: var(--color-tertiary);
+      background-color: var(--color-primary);
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: bold;
+      display: relative;
+      float: center;
+      align-items: center;
+
 }
-#year {
-  color: #A5A58D;
-} */
+
+.icons {
+      color: var(--color-tertiary);
+      display: relative;
+      margin-top: -8%;
+      margin-bottom: 13%;
+      margin-left: 2%;
+      margin-right: 2%;
+}
 
 #prev {
-  font-size: 1rem;
-  float: left;
+      font-size: 2rem;
+      float: left;
 }
 
 #next {
-  font-size: 1rem;
-  float: right;
+      font-size: 2rem;
+      float: right;
 }
+
 .weeks {
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 0;
-  background-color: var(--color-primary);
-  font-size: 1rem;
-  width: 100%;
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      background-color: var(--color-primary);
+      font-size: 1rem;
+      width: 100%;
 }
+
 .weeks li {
-  color: var(--color-tertiary);
-  text-align: center;
-  font-weight: bold;
-  list-style-type: none;
-  flex: 1;
+      color: var(--color-tertiary);
+      text-align: center;
+      font-weight: bold;
+      list-style-type: none;
+      flex: 1;
 }
 
 .days {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding: 10px 0;
-  background-color: var(--color-primary);
-  margin: 0;
-  width: 100%;
-  height: 140px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 10px 0;
+      background-color: var(--color-primary);
+      margin: 0;
+      width: 100%;
+      height: 140px;
 }
 .days li {
-  list-style-type: none;
-  text-align: center;
-  width: calc(100% / 7);
-  height: 10px;
-  line-height: 10px;
-  font-size: 1rem;
-  color: var(--color-tertiary);
-  font-weight: bold;
+      list-style-type: none;
+      text-align: center;
+      width: calc(100% / 7);
+      height: 10px;
+      line-height: 10px;
+      font-size: 1rem;
+      color: var(--color-tertiary);
+      font-weight: bold;
 }
 .days li .active {
-  padding: 5%;
-  background: var(--color-secondary);
+      padding: 5%;
+      background: var(--color-secondary);
 }
 
 #event-box {
-  background-color: var(--color-primary);
-  width: 25%;
-  height: 220px;
-  margin-top: 25%;
-  border: 2px solid var(--color-tertiary);
-  padding: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-  margin-bottom: 20px;
-  position: fixed;
+      background-color: var(--color-primary);
+      width: 25%;
+      height: 220px;
+      margin-top: 30%;
+      border: 2px solid var(--color-tertiary);
+      padding: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      margin-bottom: 20px;
+      position: fixed;
 }
 #header {
-  font-size: 1rem;
-  text-align: center;
-  margin-bottom: 5%;
-  margin-top: 5%;
-  color: var(--color-tertiary);
-  font-weight: bold;
+      font-size: 1rem;
+      text-align: center;
+      margin-bottom: 5%;
+      margin-top: 5%;
+      color: var(--color-tertiary);
+      font-weight: bold;
 }
 #events-table {
-  width: 100%;
-  border-collapse: collapse;
-  display: flex;
-  flex-direction: column;
-  background-color: #f2f2f2;
+      width: 100%;
+      border-collapse: collapse;
+      display: flex;
+      flex-direction: column;
+      background-color: #f2f2f2;
 }
 #events-table tbody {
-  display: block;
-  flex-grow: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
-  max-height: 115px;
-  scrollbar-width: thick;
-  scrollbar-color: var(--color-tertiary) var(--color-primary);
-  border-radius: 0px;
-  background-color: var(--color-primary);
+      display: block;
+      flex-grow: 1;
+      overflow-y: auto;
+      overflow-x: hidden;
+      max-height: 115px;
+      scrollbar-width: thick;
+      scrollbar-color: var(--color-tertiary) var(--color-primary);
+      border-radius: 0px;
+      background-color: var(--color-primary);
 }
 
 #events-table td {
-  padding: 8px;
+      padding: 8px;
 }
 
 #events-table tbody tr {
-  display: table;
-  width: 100%;
-  table-layout: fixed;
-  margin-bottom: 1%;
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+      margin-bottom: 1%;
 }
 #date {
-  width: 30%;
-  padding: 2%;
-  background-color: var(--color-primary);
-  color: var(--color-tertiary);
-  border: 2px solid var(--color-tertiary);
-  text-align: center;
+      width: 30%;
+      padding: 2%;
+      background-color: var(--color-primary);
+      color: var(--color-tertiary);
+      border: 2px solid var(--color-tertiary);
+      text-align: center;
 }
 #tevent {
-  width: 70%;
-  background-color: var(--color-tertiary);
-  color: var(--color-primary);
-  position: relative;
-  text-align: left;
+      width: 70%;
+      background-color: var(--color-tertiary);
+      color: var(--color-primary);
+      position: relative;
+      text-align: left;
 }
 #add-btn {
-  display: block;
-  margin-top: 3%;
-  margin-left: 0%;
-  margin-right: 5%;
-  padding: 10px 50px;
-  background-color: var(--color-tertiary);
-  text-align: center;
-  color: var(--color-primary);
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
+      display: block;
+      margin-top: 3%;
+      margin-left: 0%;
+      margin-right: 5%;
+      padding: 10px 50px;
+      background-color: var(--color-tertiary);
+      text-align: center;
+      color: var(--color-primary);
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
 }
 #add-btn:hover {
-  background-color: var(--color-tertiary);
-  color: var(--color-primary);
+      background-color: var(--color-tertiary);
+      color: var(--color-primary);
 }
 #events-table tbody::-webkit-scrollbar {
-  width: 15px;
+      width: 15px;
 }
 #events-table tbody::-webkit-scrollbar-track {
-  background: var(--color-primary);
-  border-left: 2px solid var(--color-tertiary);
+      background: var(--color-primary);
+      border-left: 2px solid var(--color-tertiary);
 }
 #events-table tbody::-webkit-scrollbar-thumb {
-  background: var(--color-tertiary);
+      background: var(--color-tertiary);
 }
-
-
 
 .delete-btn {
-  background-color: var(--color-tertiary);
-  color: var(--color-primary);
-  border: none;
-  cursor: pointer;
-  font-size: 0.8rem;
-  position: absolute;
-  right: 5px;
-  top: 50%;
-  transform: translateY(-50%);
+      background-color: var(--color-tertiary);
+      color: var(--color-primary);
+      border: none;
+      cursor: pointer;
+      font-size: 0.8rem;
+      position: absolute;
+      right: 5px;
+      top: 50%;
+      transform: translateY(-50%);
 }
 .landscape {
-  position: fixed;
-  right: 20%;
-  top: 5%;
-  width: 35%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
+      position: fixed;
+      right: 20%;
+      top: 5%;
+      width: 35%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
 }
 .sun {
-  width: 180px;
-  height: 150px;
-  background-color: #E7B89F;
-  border-radius: 50%;
-  position: relative;
-  margin-top: 30%;
-  margin-left: 50%;
+      width: 150px;
+      height: 150px;
+      background-color: #E7B89F;
+      border-radius: 50%;
+      position: relative;
+      margin-top: 30%;
+      margin-left: 50%;
 }
 .mountains {
-  position: relative;
-  height: 100px;
-  width: 120%;
+      position: relative;
+      height: 100px;
+      width: 120%;
 }
 .mountain {
-  width: 0%;
-  border-left: 250px solid transparent;
-  border-right: 250px solid transparent;
-  position: absolute;
-  margin-top: 50%;
-  margin-left: 20%;
+      width: 0%;
+      border-left: 250px solid transparent;
+      border-right: 250px solid transparent;
+      position: absolute;
+      margin-top: 50%;
+      margin-left: 20%;
 }
 .mountain1 {
-  border-bottom: 300px solid #B7B7A4;
-  top: 100%;
-  left: 10%;
-  z-index: 3;
+      border-bottom: 300px solid #B7B7A4;
+      top: 100%;
+      left: 10%;
+      z-index: 3;
 }
 .mountain2 {
-  border-bottom: 400px solid #A5A58D;
-  top: -10%;
-  left: 50%;
-  z-index: 2;
-}
-#quote {
-  color: white;
-  font-size: 1.2rem;
-  text-align: center;
-  position: fixed;
-  top: 20%;
-  z-index: 3;
-  margin-left: 30%;
-  margin-right: 10%;
-}
-#author {
-  color: white;
-  font-size: 1.2rem;
-  text-align: center;
-  position: fixed;
-  top: 40%;
-  margin-left: 45%;
-  z-index: 3;
+      border-bottom: 400px solid #A5A58D;
+      top: -10%;
+      left: 50%;
+      z-index: 2;
 }
 
+#quote {
+      color: white;
+      font-size: 20px;
+      text-align: center;
+      position: fixed;
+      top: 20%;
+      z-index: 3;
+      margin-left: 30%;
+      margin-right: 10%;
+}
+
+#author {
+      color: white;
+      font-size: 20px;
+      text-align: center;
+      position: fixed;
+      top: 40%;
+      margin-left: 45%;
+      z-index: 3;
+}

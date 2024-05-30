@@ -20,12 +20,13 @@ const auth = getAuth();
 const provider = new GoogleAuthProvider();
 const db = getFirestore(app);
 const storage = getStorage();
+let userID;
 
 export function signIn() {
     signInWithPopup(auth, provider)
         .then((result) => {
-            const currentUser = result.user;
-            console.log(currentUser);
+            userID = result.user.uid;
+            console.log(userID);
             window.location.href = 'homepage.html';
         }
         ).catch((error) => {
@@ -55,11 +56,10 @@ export function upload(file, subjectID) {
 onAuthStateChanged(auth, (user) => {
     if (user) {
         console.log("User is logged in");
-        console.log(user);
-        const signInBtn = document.getElementById("signin-btn");
+        const signInBtn = document.getElementById("study-btn");
         signInBtn.setAttribute("disabled", true);
         signInBtn.classList.add("disabled");
-        signInBtn.textContent = "LOGGED IN";
+        signInBtn.textContent = "Logged in";
 
     } else {
         console.log("User is not logged in");
@@ -116,3 +116,14 @@ export function addSubject(subjectID) {
         })
 }
 
+export function addEvent(date, text) {
+    const eventsRef = doc(db, "Events");
+
+    setDoc(eventsRef, {
+        date: date,
+        text: text,
+        user: userID
+    }).then(() => {
+        alert("Added an event succesfully!");
+    })
+}
