@@ -24,18 +24,18 @@ const db = getFirestore(app);
 const storage = getStorage();
 let userID;
 
-function showAlert(message) {
-    const alertContainer = document.getElementById("custom-alert");
-    const alertMessage = document.getElementById("alert-message");
-    const alertOkBtn = document.getElementById("alert-ok-btn");
+// function showAlert(message) {
+//     const alertContainer = document.getElementById("custom-alert");
+//     const alertMessage = document.getElementById("alert-message");
+//     const alertOkBtn = document.getElementById("alert-ok-btn");
 
-    alertMessage.textContent = message;
-    alertContainer.style.display = "flex"; 
+//     alertMessage.textContent = message;
+//     alertContainer.style.display = "flex";
 
-    alertOkBtn.onclick = function () {
-        alertContainer.style.display = "none";
-    };
-}
+//     alertOkBtn.onclick = function () {
+//         alertContainer.style.display = "none";
+//     };
+// }
 
 export function signIn() {
     signInWithPopup(auth, provider)
@@ -120,7 +120,7 @@ export function addSubject(subjectID) {
             addDoc(resourceRef, {});
         })
         .then(() => {
-            showAlert("Added a subject successfully!"); 
+            alert("Added a subject successfully!");
         });
 }
 
@@ -131,7 +131,7 @@ export function addEvent(eventDate, eventText) {
         text: eventText,
         user: userID
     }).then(() => {
-        showAlert("Added an event successfully!"); 
+        alert("Added an event successfully!");
     });
 }
 
