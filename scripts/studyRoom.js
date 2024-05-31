@@ -88,3 +88,26 @@ goalForm.addEventListener("submit", (event) => {
     addGoal(goalData);
     listGoal();
 })
+
+function toggleWidget(selector) {
+    const element = document.querySelector(selector);
+    element.classList.toggle('hidden');
+}
+
+function bgDefault() {
+    document.body.style.backgroundImage = "";
+    document.body.style.backgroundColor = "#CB997E";
+}
+
+function bgBlack() {
+    document.body.style.backgroundImage = "";
+    document.body.style.backgroundColor = "black";
+}
+
+function bgOnlinePic(event) {
+    event.preventDefault();
+    var url = document.getElementById('bg-URL').value;
+    document.body.style.backgroundImage = "url('" + url + "')";
+    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundPosition = "center";
+}

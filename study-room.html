@@ -36,20 +36,20 @@
 
         <ul class="widgets-bar" id="widgets-bar-1">
             <li>
-                <button onclick=""><i class="fa fa-clock-o fa-2x" style="color:#6B705C;"></i></button>
+                <button onclick="toggleWidget('.pomodoro')"><i class="fa fa-clock-o fa-2x" style="color:#6B705C;"></i></button>
             </li>
             <li>
-                <button onclick=""><i class="fa fa-check-square-o fa-2x" style="color:#6B705C;"></i></button>
+                <button onclick="toggleWidget('.goals')"><i class="fa fa-check-square-o fa-2x" style="color:#6B705C;"></i></button>
             </li>
         </ul>
 
         <ul class="widgets-bar" id="widgets-bar-2">
             <li>
-                <button onclick=""><i class="fa fa-file-image-o"
+                <button onclick="toggleWidget('.background')"><i class="fa fa-file-image-o"
                         style="margin-top: 14%; font-size: 23px; color:#6B705C;"></i></button>
             </li>
             <li>
-                <button onclick=""><i class="fa fa-spotify fa-2x" style="color:#6B705C;"></i></button>
+                <button onclick="toggleWidget('.music')"><i class="fa fa-spotify fa-2x" style="color:#6B705C;"></i></button>
             </li>
         </ul>
 
@@ -79,11 +79,11 @@
             <p>Choose your background</p>
 
             <ul class="bg-list">
-                <li><button>Default</button></li>
-                <li><button>Pitch Black</button></li>
+                <li><button onclick="bgDefault()">Default</button></li>
+                <li><button onclick="bgBlack()">Pitch Black</button></li>
                 <li>Online Picture
-                    <form id="bg-form">
-                        <input type="text" name="bg-link" placeholder="Paste url here" required />
+                    <form id="bg-form" onsubmit="bgOnlinePic(event)">
+                        <input type="text" name="bg-link" id="bg-URL" placeholder="Paste url here" required />
                         <input type="submit" name="bg-link-btn" value="/" />
                     </form>
                 </li>
