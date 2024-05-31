@@ -175,3 +175,7 @@ li.completed {
 #widgets-bar-2 {
     left: 90%;
 }
+
+.hidden {
+    display: none;
+}
