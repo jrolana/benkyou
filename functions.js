@@ -1,6 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js'
-import { getFirestore, collection, doc, setDoc, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
+import {
+    getFirestore, collection, doc, setDoc, addDoc, getDocs,
+    query, where
+} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-storage.js";
 
 import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
@@ -24,9 +27,7 @@ let userID;
 
 export function signIn() {
     signInWithPopup(auth, provider)
-        .then((result) => {
-            userID = result.user.uid;
-            console.log(userID);
+        .then(() => {
             window.location.href = 'homepage.html';
         }
         ).catch((error) => {
@@ -55,15 +56,9 @@ export function upload(file, subjectID) {
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
-        console.log("User is logged in");
-        const signInBtn = document.getElementById("study-btn");
-        signInBtn.setAttribute("disabled", true);
-        signInBtn.classList.add("disabled");
-        signInBtn.textContent = "Logged in";
-
-    } else {
-        console.log("User is not logged in");
-        console.log(user);
+        userID = user.uid;
+    } else if (window.location.pathname != '/index.html') {
+        window.location.href = 'index.html';
     }
 })
 
@@ -116,12 +111,11 @@ export function addSubject(subjectID) {
         })
 }
 
-export function addEvent(date, text) {
-    const eventsRef = doc(db, "Events");
-
-    setDoc(eventsRef, {
-        date: date,
-        text: text,
+export function addEvent(eventDate, eventText) {
+    const eventsRef = collection(db, "Events");
+    addDoc(eventsRef, {
+        date: eventDate,
+        text: eventText,
         user: userID
     }).then(() => {
         alert("Added an event succesfully!");
