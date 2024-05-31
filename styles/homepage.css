@@ -65,7 +65,7 @@ main {
 
 .wrapper {
       width: 26.5%;
-      margin-top: 5%;
+      margin-top: 4%;
       border: 2px solid #526C50;
       box-sizing: border-box;
       position: fixed;
@@ -168,8 +168,7 @@ main {
 #event-box {
       background-color: var(--color-primary);
       width: 25%;
-      height: 220px;
-      margin-top: 30%;
+      margin-top: 25%;
       border: 2px solid var(--color-tertiary);
       padding: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -220,7 +219,7 @@ main {
       margin-bottom: 1%;
 }
 
-#date {
+.tdate {
       width: 30%;
       padding: 2%;
       background-color: var(--color-primary);
@@ -229,7 +228,7 @@ main {
       text-align: center;
 }
 
-#tevent {
+.tevent {
       width: 70%;
       background-color: var(--color-tertiary);
       color: var(--color-primary);

@@ -19,15 +19,21 @@
 <body>
     <h1>Event Form</h1>
     <div class="add-record-container">
-        <form id="eventForm" class="add-record-form" action="" method="post">
+        <form id="eventForm" class="add-record-form">
             <label for="title">Event:</label>
             <input type="text" id="title" name="event" required>
 
             <label for="date">Date:</label>
             <input type="date" id="date" name="date" required>
-            <input type="submit" value="Submit" onclick="addEvent()">
+            <input type="submit" value="Submit">
         </form>
     </div>
+
+    <script type="module" src="scripts/addEvent.js"></script>
+    <script type="module">
+        import { addEvent } from './functions.js';
+        window.addEvent = addEvent;
+    </script>
 </body>
 
 </html>
