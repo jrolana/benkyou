@@ -23,17 +23,6 @@
 
 <body>
 
-    <!-- <banner>
-        <ul class="UNplaceHolder">
-            <li class="profilePic">
-                <span class="material-symbols-outlined">account_circle</span>
-            </li>
-            <li><button id="logout-btn" onclick="logout()">Log out</button></li>
-            <li id="googleMail">googleaccount@up.edu.ph</li>
-            <li id="greeting"> Enjoy your study session!</li>
-        </ul>
-    </banner> -->
-
     <nav>
         <ul id="navbar">
             <li class="logo">
@@ -47,15 +36,16 @@
     </nav>
 
     <main>
-        <div class="wrapper">
+        <div class="calendar">
             <header>
-                <p class="current-date"></p>
+                <p class="month"></p>
+                <p class="year"></p>
                 <div class="icons">
                     <span id="prev" class="material-symbols-rounded">chevron_left</span>
                     <span id="next" class="material-symbols-rounded">chevron_right</span>
                 </div>
             </header>
-            <div class="calendar">
+            <div class="wrapper">
                 <ul class="weeks">
                     <li>Sun</li>
                     <li>Mon</li>
