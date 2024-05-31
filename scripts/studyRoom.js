@@ -40,55 +40,6 @@ stopPomodoroBtn.onclick = () => {
     clearInterval(pomodoro);
 }
 
-/* || Session Goals */
-
-function getGoal(data = null) {
-    let goalList = JSON.parse(localStorage.getItem("goals"));
-    if (goalList) {
-        if (data) {
-            if (goalList.indexOf(data) != -1) {
-                return goalList[data];
-            } else {
-                return false;
-            }
-        }
-        return goalList;
-    }
-    return false;
-}
-
-function addGoal(data) {
-    if (getGoal(data) != false) {
-        alert("Item already added in todo");
-    } else {
-        let goalList = getGoal();
-        goalList = (goalList != false) ? goalList : [];
-        goalList.push(data);
-        goalList = JSON.stringify(goalList);
-        console.log(goalList);
-        localStorage.setItem("goals", goalList);
-    }
-}
-
-function listGoal() {
-    let html = ``;
-    let goalList = getGoal();
-    if (goalList) {
-        goalList.forEach((value, item) => {
-            html += `<li>${value}<button onclick="removeData(${item})">x</button></li>`;
-        })
-    }
-    document.getElementById("goal-list").innerHTML = html;
-}
-const goalForm = document.getElementById("input-form");
-goalForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-
-    const goalData = goalForm.elements["goal-input"].value;
-    addGoal(goalData);
-    listGoal();
-})
-
 function toggleWidget(selector) {
     const element = document.querySelector(selector);
     element.classList.toggle('hidden');
@@ -106,7 +57,7 @@ function bgBlack() {
 
 function bgOnlinePic(event) {
     event.preventDefault();
-    var url = document.getElementById('bg-URL').value;
+    const url = document.getElementById('bg-URL').value;
     document.body.style.backgroundImage = "url('" + url + "')";
     document.body.style.backgroundSize = "cover";
 }

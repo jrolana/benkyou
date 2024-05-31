@@ -2,7 +2,6 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/fireba
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js'
 import {
     getFirestore, collection, doc, setDoc, addDoc, getDocs,
-    query, where
 } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-storage.js";
 
@@ -121,3 +120,14 @@ export function addEvent(eventDate, eventText) {
         alert("Added an event succesfully!");
     })
 }
+
+export function addGoal(goalText) {
+    const goalRef = collection(db, "Goals");
+    addDoc(goalRef, {
+        text: goalText,
+        user: userID
+    }).then(() => {
+        alert("Another goal added. Good luck!");
+    })
+}
+
