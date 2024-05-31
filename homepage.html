@@ -17,11 +17,13 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
 
     <link rel="stylesheet" href="styles\homepage.css">
-    <script src="scripts\homepage.js" defer></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <banner>
+
+    <!-- <banner>
         <ul class="UNplaceHolder">
             <li class="profilePic">
                 <span class="material-symbols-outlined">account_circle</span>
@@ -29,9 +31,8 @@
             <li><button id="logout-btn" onclick="logout()">Log out</button></li>
             <li id="googleMail">googleaccount@up.edu.ph</li>
             <li id="greeting"> Enjoy your study session!</li>
-
         </ul>
-    </banner>
+    </banner> -->
 
     <nav>
         <ul id="navbar">
@@ -44,7 +45,6 @@
             <li><a href="materials.html">Materials</a></li>
         </ul>
     </nav>
-
 
     <main>
         <div class="wrapper">
@@ -74,11 +74,10 @@
             <div class="table">
                 <table id="events-table">
                     <tbody id="events-list">
-
                     </tbody>
                 </table>
             </div>
-            <button id="add-btn" onclick="addEventWindow()">Add Event</button>
+            <button id="add-btn">Add Event</button>
         </div>
 
         <div class="landscape">
@@ -94,6 +93,14 @@
             </p>
         </div>
     </main>
+
+    <script src="scripts\homepage.js" type="module">
+    </script>
+
+    <script type="module">
+        import { deleteRow } from '../scripts/homepage.js';
+        window.deleteRow = deleteRow;
+    </script>
 </body>
 
 </html>

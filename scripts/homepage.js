@@ -1,5 +1,78 @@
-// Calendar:
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js'
+import {
+    getFirestore, collection, doc, deleteDoc, getDocs,
+    query, where
+} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCPSupKoCfo_v_0iw32mHDG_Gq1ThIVB-4",
+    authDomain: "benkyou-1611e.firebaseapp.com",
+    projectId: "benkyou-1611e",
+    storageBucket: "benkyou-1611e.appspot.com",
+    messagingSenderId: "530106857438",
+    appId: "1:530106857438:web:0c04226f9b65c4fb4c8f4f",
+    measurementId: "G-QENZJ94CQ8"
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+const db = getFirestore(app);
+let userID;
+
+function deleteEvent(eventRef) {
+    deleteDoc(doc(db, "Events", eventRef))
+        .then(() => {
+            alert("Deleted an event succesfully!");
+        });
+}
+
+export function deleteRow(r) {
+    const event = r.parentNode.parentNode;
+    const eventRef = event.id;
+    const i = event.rowIndex;
+    document.getElementById("events-list").deleteRow(i);
+    deleteEvent(eventRef);
+}
+
+async function getEvents() {
+    const queryGetResources = query(collection(db, "Events"), where("user", "==", userID));
+    const querySnapshot = await getDocs(queryGetResources);
+
+    const eventsContainer = document.getElementById("events-list");
+    querySnapshot.forEach((event) => {
+        const eventData = event.data();
+        console.log(eventData);
+
+        const eventContainer = document.createElement("tr");
+
+        const date = document.createElement("td");
+        date.textContent = eventData.date;
+        date.classList.add("tdate");
+
+        const text = document.createElement("td");
+        text.innerHTML = `${eventData.text} <button onclick="deleteRow(this)" class="delete-btn">X</button>`;
+
+        text.classList.add("tevent");
+
+        eventContainer.append(date);
+        eventContainer.append(text);
+        eventContainer.id = event.id;
+        eventsContainer.append(eventContainer);
+    })
+}
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        userID = user.uid;
+        getEvents();
+    } else if (window.location.pathname != '/index.html') {
+        window.location.href = 'index.html';
+    }
+})
+
+// Calendar:
 const daysTag = document.querySelector(".days"),
     currentDate = document.querySelector(".current-date"),
     prevNextIcon = document.querySelectorAll(".icons span");
@@ -55,9 +128,8 @@ prevNextIcon.forEach(icon => { // getting prev and next icons
     });
 });
 
-
-
 //Event:
+
 
 function addEventWindow() {
     const width = 400;
@@ -65,19 +137,15 @@ function addEventWindow() {
     const left = (screen.width - width) / 2;
     const top = (screen.height - height) / 2;
     window.open('add-event.html', 'AddEventWindow', `width=${width},height=${height},top=${top},left=${left}`);
-
 }
-
+const addEventBtn = document.getElementById("add-btn");
+addEventBtn.addEventListener("click", addEventWindow);
 
 //Motivational Quote:
-
 const apiURL = "https://api.quotable.io/random";
 
 const quoteElement = document.getElementById("quote");
 const authorElement = document.getElementById("author");
-
-
-
 
 async function getQuoteOfTheDay(url) {
     const storedQuote = JSON.parse(localStorage.getItem("quoteOfTheDay"));
@@ -111,3 +179,4 @@ async function getQuoteOfTheDay(url) {
 }
 
 getQuoteOfTheDay(apiURL);
+

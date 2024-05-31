@@ -36,10 +36,12 @@
 
         <ul class="widgets-bar" id="widgets-bar-1">
             <li>
-                <button onclick="toggleWidget('.pomodoro')"><i class="fa fa-clock-o fa-2x" style="color:#6B705C;"></i></button>
+                <button onclick="toggleWidget('.pomodoro')"><i class="fa fa-clock-o fa-2x"
+                        style="color:#6B705C;"></i></button>
             </li>
             <li>
-                <button onclick="toggleWidget('.goals')"><i class="fa fa-check-square-o fa-2x" style="color:#6B705C;"></i></button>
+                <button onclick="toggleWidget('.goals')"><i class="fa fa-check-square-o fa-2x"
+                        style="color:#6B705C;"></i></button>
             </li>
         </ul>
 
@@ -49,7 +51,8 @@
                         style="margin-top: 14%; font-size: 23px; color:#6B705C;"></i></button>
             </li>
             <li>
-                <button onclick="toggleWidget('.music')"><i class="fa fa-spotify fa-2x" style="color:#6B705C;"></i></button>
+                <button onclick="toggleWidget('.music')"><i class="fa fa-spotify fa-2x"
+                        style="color:#6B705C;"></i></button>
             </li>
         </ul>
 
@@ -62,17 +65,15 @@
 
         <div class="goals">
             <p>Session Goals</p>
-            <form class="input-form">
+            <form id="input-form">
                 <input type="text" name="goal-input" placeholder="What's your goal?" required />
                 <input type="submit" name="goal-submit" value="+" />
             </form>
 
-            <ul class="goal-list">
-                <li>Goal 1<button>x</button></li>
-                <li>Goal 1<button>x</button></li>
-                <li>Goal 1<button>x</button></li>
-                <li class="completed">Goal 1<button>x</button></li>
-            </ul>
+            <table>
+                <tbody id="goal-list">
+                </tbody>
+            </table>
         </div>
 
         <div class="background">
@@ -96,6 +97,11 @@
     </main>
 
     <script src="scripts/studyRoom.js"></script>
+    <script src="scripts/goals.js" type="module"></script>
+    <script type="module">
+        import { deleteRow } from '../scripts/goals.js';
+        window.deleteRow = deleteRow;
+    </script>
 </body>
 
 </html>

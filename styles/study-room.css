@@ -65,35 +65,25 @@
 }
 
 /* || Session Goals */
-
 .goals {
     top: 44%;
     left: 15%;
 }
 
-.goal-list {
-    list-style: none;
-
-    display: flex;
-    flex-direction: column;
-    padding-left: 0;
-
-    li {
-        display: flex;
-        justify-content: space-between;
-    }
+tbody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+    background-color: var(--color-tertiary);
+    color: var(--color-primary);
+    margin-bottom: 1%;
 }
 
-li.completed {
-    background-color: var(--color-primary);
-    color: var(--color-tertiary);
-    text-decoration: line-through;
-
-    button {
-        display: none;
-    }
+.td {
+    width: 70%;
+    position: relative;
+    text-align: left;
 }
-
 /* || Background-change */
 
 .background {

@@ -1,6 +1,8 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js'
-import { getFirestore, collection, doc, setDoc, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
+import {
+    getFirestore, collection, doc, setDoc, addDoc, getDocs,
+} from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-storage.js";
 
 import { v4 as uuidv4 } from 'https://jspm.dev/uuid';
@@ -22,22 +24,33 @@ const db = getFirestore(app);
 const storage = getStorage();
 let userID;
 
+// function showAlert(message) {
+//     const alertContainer = document.getElementById("custom-alert");
+//     const alertMessage = document.getElementById("alert-message");
+//     const alertOkBtn = document.getElementById("alert-ok-btn");
+
+//     alertMessage.textContent = message;
+//     alertContainer.style.display = "flex";
+
+//     alertOkBtn.onclick = function () {
+//         alertContainer.style.display = "none";
+//     };
+// }
+
 export function signIn() {
     signInWithPopup(auth, provider)
-        .then((result) => {
-            userID = result.user.uid;
-            console.log(userID);
+        .then(() => {
             window.location.href = 'homepage.html';
-        }
-        ).catch((error) => {
+        })
+        .catch((error) => {
             const errorMessage = error.message;
             alert(errorMessage);
-        })
+        });
 }
 
 export function upload(file, subjectID) {
     const newUploadID = uuidv4();
-    const uploadRef = ref(storage, newUploadID)
+    const uploadRef = ref(storage, newUploadID);
 
     uploadBytes(uploadRef, file).then(async (snapshot) => {
         const link = await getDownloadURL(snapshot.ref);
@@ -47,7 +60,7 @@ export function upload(file, subjectID) {
         await setDoc(resourceDocRef, {
             title: file.name,
             link,
-        })
+        });
 
         console.log('Uploaded a blob or file!');
     });
@@ -55,17 +68,11 @@ export function upload(file, subjectID) {
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
-        console.log("User is logged in");
-        const signInBtn = document.getElementById("study-btn");
-        signInBtn.setAttribute("disabled", true);
-        signInBtn.classList.add("disabled");
-        signInBtn.textContent = "Logged in";
-
-    } else {
-        console.log("User is not logged in");
-        console.log(user);
+        userID = user.uid;
+    } else if (window.location.pathname != '/index.html') {
+        window.location.href = 'index.html';
     }
-})
+});
 
 export async function getSubjects(subjectsContainer) {
     const queryGetSubjects = await getDocs(collection(db, "Subjects"));
@@ -77,7 +84,7 @@ export async function getSubjects(subjectsContainer) {
         subjectContainer.setAttribute("onclick", `getResources("${subject.id}")`);
 
         subjectsContainer.append(subjectContainer);
-    })
+    });
 }
 
 export async function getResources(subjectID) {
@@ -101,7 +108,7 @@ export async function getResources(subjectID) {
         resourceContainer.setAttribute("onclick", `window.location.href="${resourceData.link}"`);
 
         resourcesContainer.append(resourceContainer);
-    })
+    });
 }
 
 export function addSubject(subjectID) {
@@ -110,20 +117,31 @@ export function addSubject(subjectID) {
 
     setDoc(subjectRef, {})
         .then(() => {
-            addDoc(resourceRef, {})
-        }).then(() => {
-            alert("Added a subject succesfully!");
+            addDoc(resourceRef, {});
         })
+        .then(() => {
+            alert("Added a subject successfully!");
+        });
 }
 
-export function addEvent(date, text) {
-    const eventsRef = doc(db, "Events");
-
-    setDoc(eventsRef, {
-        date: date,
-        text: text,
+export function addEvent(eventDate, eventText) {
+    const eventsRef = collection(db, "Events");
+    addDoc(eventsRef, {
+        date: eventDate,
+        text: eventText,
         user: userID
     }).then(() => {
-        alert("Added an event succesfully!");
+        alert("Added an event successfully!");
+    });
+}
+
+export function addGoal(goalText) {
+    const goalRef = collection(db, "Goals");
+    addDoc(goalRef, {
+        text: goalText,
+        user: userID
+    }).then(() => {
+        alert("Another goal added. Good luck!");
     })
 }
+
