@@ -109,5 +109,4 @@ function bgOnlinePic(event) {
     var url = document.getElementById('bg-URL').value;
     document.body.style.backgroundImage = "url('" + url + "')";
     document.body.style.backgroundSize = "cover";
-    document.body.style.backgroundPosition = "center";
 }
