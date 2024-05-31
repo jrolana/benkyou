@@ -1,10 +1,9 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
-import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js'
+import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js'
 import {
-    getFirestore, collection, doc, deleteDoc, addDoc, getDocs,
+    getFirestore, collection, doc, deleteDoc, getDocs,
     query, where
 } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-storage.js";
 
 
 const firebaseConfig = {
@@ -19,13 +18,14 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth();
-const provider = new GoogleAuthProvider();
 const db = getFirestore(app);
 let userID;
 
-async function deleteEvent(eventRef) {
-    await deleteDoc(doc(db, "Events", eventRef));
-    alert("Deleted an event succesfully!");
+function deleteEvent(eventRef) {
+    deleteDoc(doc(db, "Events", eventRef))
+        .then(() => {
+            alert("Deleted an event succesfully!");
+        });
 }
 
 export function deleteRow(r) {
@@ -43,6 +43,8 @@ async function getEvents() {
     const eventsContainer = document.getElementById("events-list");
     querySnapshot.forEach((event) => {
         const eventData = event.data();
+        console.log(eventData);
+
         const eventContainer = document.createElement("tr");
 
         const date = document.createElement("td");
