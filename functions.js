@@ -1,7 +1,7 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
 import { getAuth, signInWithPopup, GoogleAuthProvider, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js'
 import {
-    getFirestore, collection, doc, setDoc, addDoc, getDocs,
+    getFirestore, collection, doc, setDoc, addDoc, getDocs, getCountFromServer
 } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-storage.js";
 
@@ -48,23 +48,6 @@ export function signIn() {
         });
 }
 
-export function upload(file, subjectID) {
-    const newUploadID = uuidv4();
-    const uploadRef = ref(storage, newUploadID);
-
-    uploadBytes(uploadRef, file).then(async (snapshot) => {
-        const link = await getDownloadURL(snapshot.ref);
-        console.log(link);
-
-        const resourceDocRef = doc(db, "Subjects", subjectID, "Resources", newUploadID);
-        await setDoc(resourceDocRef, {
-            title: file.name,
-            link,
-        });
-
-        console.log('Uploaded a blob or file!');
-    });
-}
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -74,8 +57,33 @@ onAuthStateChanged(auth, (user) => {
     }
 });
 
+export function upload(file, subjectID) {
+    return new Promise((resolve) => {
+        const newUploadID = uuidv4();
+        const uploadRef = ref(storage, newUploadID);
+
+        uploadBytes(uploadRef, file).then(async (snapshot) => {
+            const link = await getDownloadURL(snapshot.ref);
+            console.log(link);
+
+            const resourceDocRef = doc(db, "Subjects", subjectID, "Resources", newUploadID);
+            await setDoc(resourceDocRef, {
+                title: file.name,
+                link,
+            });
+
+            console.log('Uploaded a blob or file!');
+            resolve();
+        });
+
+    })
+}
+
+
 export async function getSubjects(subjectsContainer) {
     const queryGetSubjects = await getDocs(collection(db, "Subjects"));
+
+    subjectsContainer.innerHTML = "";
 
     queryGetSubjects.forEach((subject) => {
         const subjectContainer = document.createElement("div");
@@ -85,20 +93,33 @@ export async function getSubjects(subjectsContainer) {
 
         subjectsContainer.append(subjectContainer);
     });
+
 }
 
 export async function getResources(subjectID) {
-    const queryGetResources = await getDocs(collection(db, "Subjects", subjectID, "Resources"));
+    console.log("getResources");
+
+    const resourceRef = collection(db, "Subjects", subjectID, "Resources");
+    const resourcesNum = await getCountFromServer(resourceRef);
+
     const header = document.getElementById("subject-title");
     header.textContent = subjectID;
-
     const resourcesContainer = document.getElementById("module-lists");
     resourcesContainer.innerHTML = "";
+
+    // Disregards empty document that is initialized with creation of a subjects
+    if (resourcesNum.data().count < 2) {
+        resourcesContainer.innerHTML = "<p>No uploaded materials yet.</p>";
+        return;
+    }
+
+    const queryGetResources = await getDocs(resourceRef);
     queryGetResources.forEach((resource) => {
+
         const resourceData = resource.data();
         console.log(resourceData);
 
-        if (resourceData.link == undefined) {
+        if (resourceData.link == undefined || resourceData.title == undefined) {
             return;
         }
 
@@ -109,6 +130,7 @@ export async function getResources(subjectID) {
 
         resourcesContainer.append(resourceContainer);
     });
+
 }
 
 export function addSubject(subjectID) {
@@ -125,23 +147,30 @@ export function addSubject(subjectID) {
 }
 
 export function addEvent(eventDate, eventText) {
-    const eventsRef = collection(db, "Events");
-    addDoc(eventsRef, {
-        date: eventDate,
-        text: eventText,
-        user: userID
-    }).then(() => {
-        alert("Added an event successfully!");
-    });
-}
-
-export function addGoal(goalText) {
-    const goalRef = collection(db, "Goals");
-    addDoc(goalRef, {
-        text: goalText,
-        user: userID
-    }).then(() => {
-        alert("Another goal added. Good luck!");
+    return new Promise((resolve) => {
+        const eventsRef = collection(db, "Events");
+        addDoc(eventsRef, {
+            date: eventDate,
+            text: eventText,
+            user: userID
+        }).then(() => {
+            alert("Added an event successfully!");
+            resolve();
+        });
     })
 }
 
+export function addGoal(goalText) {
+    return new Promise((resolve) => {
+        const goalRef = collection(db, "Goals");
+        addDoc(goalRef, {
+            text: goalText,
+            user: userID
+        }).then(() => {
+            alert("Another goal added. Good luck!");
+            resolve();
+        })
+    })
+}
+
+export default app;

@@ -69,6 +69,13 @@ body {
     flex-wrap: wrap;
     overflow-y: auto;
 
+    p {
+        font-size: 1rem;
+        color: var(--color-tertiary);
+        display: flex;
+        margin: auto;
+    }
+
 }
 
 .modules {
