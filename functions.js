@@ -24,20 +24,33 @@ const db = getFirestore(app);
 const storage = getStorage();
 let userID;
 
+function showAlert(message) {
+    const alertContainer = document.getElementById("custom-alert");
+    const alertMessage = document.getElementById("alert-message");
+    const alertOkBtn = document.getElementById("alert-ok-btn");
+
+    alertMessage.textContent = message;
+    alertContainer.style.display = "flex"; 
+
+    alertOkBtn.onclick = function () {
+        alertContainer.style.display = "none";
+    };
+}
+
 export function signIn() {
     signInWithPopup(auth, provider)
         .then(() => {
             window.location.href = 'homepage.html';
-        }
-        ).catch((error) => {
+        })
+        .catch((error) => {
             const errorMessage = error.message;
             alert(errorMessage);
-        })
+        });
 }
 
 export function upload(file, subjectID) {
     const newUploadID = uuidv4();
-    const uploadRef = ref(storage, newUploadID)
+    const uploadRef = ref(storage, newUploadID);
 
     uploadBytes(uploadRef, file).then(async (snapshot) => {
         const link = await getDownloadURL(snapshot.ref);
@@ -47,7 +60,7 @@ export function upload(file, subjectID) {
         await setDoc(resourceDocRef, {
             title: file.name,
             link,
-        })
+        });
 
         console.log('Uploaded a blob or file!');
     });
@@ -59,7 +72,7 @@ onAuthStateChanged(auth, (user) => {
     } else if (window.location.pathname != '/index.html') {
         window.location.href = 'index.html';
     }
-})
+});
 
 export async function getSubjects(subjectsContainer) {
     const queryGetSubjects = await getDocs(collection(db, "Subjects"));
@@ -71,7 +84,7 @@ export async function getSubjects(subjectsContainer) {
         subjectContainer.setAttribute("onclick", `getResources("${subject.id}")`);
 
         subjectsContainer.append(subjectContainer);
-    })
+    });
 }
 
 export async function getResources(subjectID) {
@@ -95,7 +108,7 @@ export async function getResources(subjectID) {
         resourceContainer.setAttribute("onclick", `window.location.href="${resourceData.link}"`);
 
         resourcesContainer.append(resourceContainer);
-    })
+    });
 }
 
 export function addSubject(subjectID) {
@@ -104,10 +117,11 @@ export function addSubject(subjectID) {
 
     setDoc(subjectRef, {})
         .then(() => {
-            addDoc(resourceRef, {})
-        }).then(() => {
-            alert("Added a subject succesfully!");
+            addDoc(resourceRef, {});
         })
+        .then(() => {
+            showAlert("Added a subject successfully!"); 
+        });
 }
 
 export function addEvent(eventDate, eventText) {
@@ -117,8 +131,8 @@ export function addEvent(eventDate, eventText) {
         text: eventText,
         user: userID
     }).then(() => {
-        alert("Added an event succesfully!");
-    })
+        showAlert("Added an event successfully!"); 
+    });
 }
 
 export function addGoal(goalText) {
