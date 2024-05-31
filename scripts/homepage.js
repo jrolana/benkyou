@@ -1,22 +1,12 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
 import { getAuth, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js'
 import {
     getFirestore, collection, doc, deleteDoc, getDocs,
     query, where
 } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 
+import app from '../functions.js';
 
-const firebaseConfig = {
-    apiKey: "AIzaSyCPSupKoCfo_v_0iw32mHDG_Gq1ThIVB-4",
-    authDomain: "benkyou-1611e.firebaseapp.com",
-    projectId: "benkyou-1611e",
-    storageBucket: "benkyou-1611e.appspot.com",
-    messagingSenderId: "530106857438",
-    appId: "1:530106857438:web:0c04226f9b65c4fb4c8f4f",
-    measurementId: "G-QENZJ94CQ8"
-};
-
-const app = initializeApp(firebaseConfig);
+// Events
 const auth = getAuth();
 const db = getFirestore(app);
 let userID;
@@ -25,6 +15,7 @@ function deleteEvent(eventRef) {
     deleteDoc(doc(db, "Events", eventRef))
         .then(() => {
             alert("Deleted an event succesfully!");
+            getEvents();
         });
 }
 
@@ -41,6 +32,7 @@ async function getEvents() {
     const querySnapshot = await getDocs(queryGetResources);
 
     const eventsContainer = document.getElementById("events-list");
+    eventsContainer.innerHTML = "";
     querySnapshot.forEach((event) => {
         const eventData = event.data();
         console.log(eventData);
@@ -130,8 +122,6 @@ prevNextIcon.forEach(icon => { // getting prev and next icons
 });
 
 //Event:
-
-
 function addEventWindow() {
     const width = 400;
     const height = 300;
@@ -139,8 +129,11 @@ function addEventWindow() {
     const top = (screen.height - height) / 2;
     window.open('add-event.html', 'AddEventWindow', `width=${width},height=${height},top=${top},left=${left}`);
 }
+
 const addEventBtn = document.getElementById("add-btn");
-addEventBtn.addEventListener("click", addEventWindow);
+addEventBtn.addEventListener("click", () => {
+    addEventWindow();
+});
 
 //Motivational Quote:
 const apiURL = "https://api.quotable.io/random";
