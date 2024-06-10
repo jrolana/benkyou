@@ -24,18 +24,18 @@ const db = getFirestore(app);
 const storage = getStorage();
 let userID;
 
-// function showAlert(message) {
-//     const alertContainer = document.getElementById("custom-alert");
-//     const alertMessage = document.getElementById("alert-message");
-//     const alertOkBtn = document.getElementById("alert-ok-btn");
+export function showAlert(message) {
+    const alertContainer = document.getElementById("custom-alert");
+    const alertMessage = document.getElementById("alert-message");
+    const alertOkBtn = document.getElementById("alert-ok-btn");
 
-//     alertMessage.textContent = message;
-//     alertContainer.style.display = "flex";
+    alertMessage.textContent = message;
+    alertContainer.style.display = "flex";
 
-//     alertOkBtn.onclick = function () {
-//         alertContainer.style.display = "none";
-//     };
-// }
+    alertOkBtn.onclick = function () {
+        alertContainer.style.display = "none";
+    };
+}
 
 export function signIn() {
     signInWithPopup(auth, provider)
@@ -47,7 +47,6 @@ export function signIn() {
             alert(errorMessage);
         });
 }
-
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -142,7 +141,7 @@ export function addSubject(subjectID) {
             addDoc(resourceRef, {});
         })
         .then(() => {
-            alert("Added a subject successfully!");
+            showAlert("Added a subject successfully!");
         });
 }
 
@@ -154,7 +153,7 @@ export function addEvent(eventDate, eventText) {
             text: eventText,
             user: userID
         }).then(() => {
-            alert("Added an event successfully!");
+            showAlert("Added an event successfully!");
             resolve();
         });
     })
@@ -167,7 +166,7 @@ export function addGoal(goalText) {
             text: goalText,
             user: userID
         }).then(() => {
-            alert("Another goal added. Good luck!");
+            showAlert("Another goal added. Good luck!");
             resolve();
         })
     })
