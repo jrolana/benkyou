@@ -4,7 +4,7 @@ import {
     query, where
 } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
 
-import app, { addGoal } from '../functions.js';
+import app, { addGoal, showAlert } from '../functions.js';
 
 /* || Session Goals */
 
@@ -35,7 +35,7 @@ goalForm.addEventListener("submit", (event) => {
 function finishGoal(goalRef) {
     deleteDoc(doc(db, "Goals", goalRef))
         .then(() => {
-            alert("Congrats for completing a task!");
+            showAlert("Congrats for completing a task!");
             getGoals();
         });
 }
